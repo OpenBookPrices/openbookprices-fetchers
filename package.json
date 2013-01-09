@@ -1,0 +1,16 @@
+{
+  "name": "l2b-price-fetchers",
+  "version": "0.0.0",
+  "description": "Code for getting the prices of books from various vendors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LinkToBooks/l2b-price-fetchers.git"
+  },
+  "author": "",
+  "license": "AGPLv3",
+  "readmeFilename": "README.md"
+}
