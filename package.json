@@ -12,5 +12,8 @@
   },
   "author": "",
   "license": "AGPLv3",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "commander": "~1.1.1"
+  }
 }
