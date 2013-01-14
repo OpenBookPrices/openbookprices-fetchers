@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var program = require("commander");
+var program = require("commander"),
+    Fetcher = require("../");
 
 program
   .version("0.0.1")
@@ -15,8 +16,20 @@ if (!program.isbn || !program.vendor) {
   process.exit(1);
 }
 
+var fetcher = new Fetcher();
+
 console.log(
   "Fetching price etc for '%s' from '%s'",
   program.isbn,
   program.vendor
+);
+
+fetcher.fetch(
+  {
+    isbn:   program.isbn,
+    vendor: program.vendor,
+  },
+  function (err, data) {
+    console.log(err, data);
+  }
 );
