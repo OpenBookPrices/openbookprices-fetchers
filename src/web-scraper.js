@@ -2,7 +2,8 @@ var util    = require('util'),
     _       = require('underscore'),
     jsdom   = require("jsdom"),
     fs      = require("fs"),
-    request = require('request');
+    request = require('request'),
+    ISBN    = require('isbn').ISBN;
 
 var jquerySource  = fs.readFileSync( __dirname + "/jquery.js" ).toString();
 
@@ -12,6 +13,17 @@ var scraper = function () {
 
 scraper.prototype.init = function ( options ) {
   _.extend(this, options);
+  
+  // Check that we have the values we need
+  if (!this.isbn) {
+    throw "Need an isbn";
+  }
+  var isbn = ISBN.parse(this.isbn);
+  if (!isbn) {
+    throw "Not a valid ISBN '" + this.isbn + "'";
+  }
+  this.isbn = isbn.asIsbn13();
+
   this.results = {};
 };
 

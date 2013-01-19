@@ -17,6 +17,7 @@
     "commander": "~1.1.1",
     "jsdom": "~0.3.4",
     "request": "~2.12.0",
-    "underscore": "~1.4.3"
+    "underscore": "~1.4.3",
+    "isbn": "~0.1.0"
   }
 }
