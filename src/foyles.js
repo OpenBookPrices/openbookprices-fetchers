@@ -51,32 +51,11 @@ scraper.prototype.scrape = function ( options, cb ) {
   this.get(
     options.searchURL,
     function (errors, window, results) {
-      var $ = window.$;
-      
       if ( errors ) throw errors;
-
-      results.title  = $("div.BookTitle").find("span[itemprop=name]").text();
-      results.author = $("div.Author").first().text();
-
-      var prices = results.prices = [];
       
-      $("div.PurchaseTable")
-        .find("tr.DarkGrey")
-        .first()
-        .each(function () {
-          var row = $(this);
-          if (! row.attr('class')) return;
-          
-          var price = {
-            condition: 'new',
-            currency:  'GBP'
-          };
+      var $ = window.$;
+      _.extend(results, self.jqueryExtract($) );
 
-          price.amount       = row.find('.OnlinePrice').text().replace(/[\D\.]/, '');
-          price.availability = row.find('.Availtext').text().trim();
-
-          prices.push( price );
-        })
 
       results.endTime = Date.now();
       results.totalTime = results.endTime - results.startTime;
@@ -90,7 +69,38 @@ scraper.prototype.scrape = function ( options, cb ) {
     }
   );
   
+};
+
+scraper.prototype.jqueryExtract = function ($) {
+
+  var results = {}
+
+  results.title  = $("div.BookTitle").find("span[itemprop=name]").text();
+  results.author = $("div.Author").first().text();
+
+  var prices = results.prices = [];
+  
+  $("div.PurchaseTable")
+    .find("tr.DarkGrey")
+    .first()
+    .each(function () {
+      var row = $(this);
+      if (! row.attr('class')) return;
+      
+      var price = {
+        condition: 'new',
+        currency:  'GBP'
+      };
+
+      price.amount       = row.find('.OnlinePrice').text().replace(/[\D\.]/, '');
+      price.availability = row.find('.Availtext').text().trim();
+
+      prices.push( price );
+    });
+  
+  return results;
 }
+
 
 scraper.prototype.cleanup = function ( results ) {
   _.each( results, function (val, key) {
