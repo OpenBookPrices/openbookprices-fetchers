@@ -6,9 +6,10 @@ var Fetcher = function () {
 Fetcher.prototype.fetch = function (options, cb) {
 
   // just work with one scraper
-  var foyles = new (require('./src/foyles'))();
+  var Foyles = require('./src/foyles');
+  var foyles = new Foyles(options);
 
-  foyles.scrape( options, cb );
+  foyles.scrape( cb );
 };
 
 module.exports = Fetcher;
