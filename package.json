@@ -14,6 +14,9 @@
   "license": "AGPLv3",
   "readmeFilename": "README.md",
   "dependencies": {
-    "commander": "~1.1.1"
+    "commander": "~1.1.1",
+    "jsdom": "~0.3.4",
+    "request": "~2.12.0",
+    "underscore": "~1.4.3"
   }
 }

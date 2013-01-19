@@ -30,6 +30,6 @@ fetcher.fetch(
     vendor: program.vendor,
   },
   function (err, data) {
-    console.log(err, data);
+    // console.log(err, data);
   }
 );
