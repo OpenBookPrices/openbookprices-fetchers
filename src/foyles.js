@@ -18,7 +18,7 @@ var scraper = function () {
 scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=%s'
 
 
-function get ( url, cb ) {
+scraper.prototype.get = function( url, cb ) {
   var results = {};
   results.startTime = Date.now();
 
@@ -42,13 +42,13 @@ function get ( url, cb ) {
       });
     }
   )
-}
+};
 
 scraper.prototype.scrape = function ( options, cb ) {
-
+  var self = this;
   options.searchURL = util.format(this.isbnURLTemplate, options.isbn);
 
-  get(
+  this.get(
     options.searchURL,
     function (errors, window, results) {
       var $ = window.$;
@@ -81,7 +81,7 @@ scraper.prototype.scrape = function ( options, cb ) {
       results.endTime = Date.now();
       results.totalTime = results.endTime - results.startTime;
 
-      cleanup( results );
+      self.cleanup( results );
 
       console.log( JSON.stringify(results, null, 2) );
 
@@ -92,7 +92,7 @@ scraper.prototype.scrape = function ( options, cb ) {
   
 }
 
-function cleanup ( results ) {
+scraper.prototype.cleanup = function ( results ) {
   _.each( results, function (val, key) {
     if ( _.isString(val) ) {
       val = val.replace(/\s+/, ' ');
