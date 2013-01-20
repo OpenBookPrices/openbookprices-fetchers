@@ -1,3 +1,4 @@
+'use strict';
 
 var Fetcher = function () {
   
@@ -9,7 +10,7 @@ Fetcher.prototype.fetch = function (options, cb) {
   var Foyles = require('./src/foyles');
   var foyles = new Foyles(options);
 
-  foyles.scrape( cb );
+  foyles.scrape(cb);
 };
 
 module.exports = Fetcher;

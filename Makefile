@@ -5,7 +5,7 @@ node-modules:
 	npm prune
 
 jshint:
-	node_modules/.bin/jshint --config config/jshint-node.json src/ test/
+	node_modules/.bin/jshint --config config/jshint-node.json *.js src/ test/
 
 test: node-modules jshint
 	 mocha
