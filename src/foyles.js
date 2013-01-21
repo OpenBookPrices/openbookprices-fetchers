@@ -23,8 +23,8 @@ scraper.prototype.jqueryExtract = function ($) {
 
   results.title  = $('div.BookTitle').find('span[itemprop=name]').text();
   results.authors = _.map(
-    $('div.Author').first().find("a"),
-    function (author) { return $(author).text().trim();}
+    $('div.Author').first().find('a'),
+    function (author) { return $(author).text().trim(); }
   );
 
   var prices = results.prices = [];
@@ -50,7 +50,7 @@ scraper.prototype.jqueryExtract = function ($) {
 
       price.availabilityComment = row.find('.Availtext').text().trim();
 
-      if ( price.amount >= 10 ) {
+      if (price.amount >= 10) {
         price.shipping = 0;
       }
 
@@ -60,5 +60,14 @@ scraper.prototype.jqueryExtract = function ($) {
   return results;
 };
 
+
+scraper.prototype.availabilityTests = {
+  'yes': [
+    /Despatched in \d business day/,
+  ],
+  'no':  [
+    /Available through New & Used Online only/,
+  ],
+};
 
 module.exports = scraper;

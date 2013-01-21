@@ -93,6 +93,8 @@ scraper.prototype.scrape = function (cb) {
 
 
 scraper.prototype.cleanup = function (results) {
+  var self = this;
+
   _.each(results, function (val, key) {
     if (_.isString(val)) {
       val = val.replace(/\s+/, ' ');
@@ -101,8 +103,26 @@ scraper.prototype.cleanup = function (results) {
   });
   
   _.each(results.prices, function (price) {
-    price.total = price.amount + price.shipping;    
+    price.total = price.amount + price.shipping;
+    price.availability = self.parseAvailability(price);
   });
+  
+  return results;
+};
+
+scraper.prototype.parseAvailability = function (price) {
+
+  var tester = function (regex) {
+    return regex.test(price.availabilityComment);
+  };
+
+  var yesTests = this.availabilityTests.yes;
+  var noTests  = this.availabilityTests.no;
+  
+  if (_.any(yesTests, tester)) { return true;  }
+  if (_.any(noTests,  tester)) { return false; }
+  
+  return null;
 };
 
 module.exports = scraper;
