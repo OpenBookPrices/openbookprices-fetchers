@@ -7,17 +7,17 @@ var WebScraper = require('./web-scraper'),
 // http://www.foyles.co.uk/help-delivery
 
 
-var scraper = function (options) {
+var Scraper = module.exports = function (options) {
   this.init(options);
 };
 
-scraper.prototype = new WebScraper();
+Scraper.prototype = new WebScraper();
 
 
-scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=%s';
+Scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=%s';
 
 
-scraper.prototype.jqueryExtract = function ($) {
+Scraper.prototype.jqueryExtract = function ($) {
 
   var results = {};
 
@@ -61,7 +61,7 @@ scraper.prototype.jqueryExtract = function ($) {
 };
 
 
-scraper.prototype.availabilityTests = {
+Scraper.prototype.availabilityTests = {
   'yes': [
     /Despatched in \d business day/,
   ],
@@ -70,4 +70,3 @@ scraper.prototype.availabilityTests = {
   ],
 };
 
-module.exports = scraper;
