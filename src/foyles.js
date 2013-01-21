@@ -1,6 +1,7 @@
 'use strict';
 
-var WebScraper = require('./web-scraper');
+var WebScraper = require('./web-scraper'),
+    _          = require('underscore');
 
 // note that we can get the worldwide shipping prices from
 // http://www.foyles.co.uk/help-delivery
@@ -21,7 +22,10 @@ scraper.prototype.jqueryExtract = function ($) {
   var results = {};
 
   results.title  = $('div.BookTitle').find('span[itemprop=name]').text();
-  results.author = $('div.Author').first().text();
+  results.authors = _.map(
+    $('div.Author').first().find("a"),
+    function (author) { return $(author).text().trim();}
+  );
 
   var prices = results.prices = [];
   
@@ -35,12 +39,20 @@ scraper.prototype.jqueryExtract = function ($) {
       }
       
       var price = {
-        condition: 'new',
-        currency:  'GBP'
+        destination:     'GB',
+        condition:       'new',
+        currency:        'GBP',
+        shippingComment: 'Free delivery in the UK for orders over £10',
+        shipping:        2.5,
       };
+      
+      price.amount = parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, ''));
 
-      price.amount       = row.find('.OnlinePrice').text().replace(/[\D\.]/, '');
-      price.availability = row.find('.Availtext').text().trim();
+      price.availabilityComment = row.find('.Availtext').text().trim();
+
+      if ( price.amount >= 10 ) {
+        price.shipping = 0;
+      }
 
       prices.push(price);
     });
