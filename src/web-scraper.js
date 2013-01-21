@@ -82,9 +82,8 @@ scraper.prototype.scrape = function (cb) {
 
       self.cleanup(results);
 
-      console.log(JSON.stringify(results, null, 2));
 
-      cb(null);
+      cb(null, self.results);
 
     }
   );
@@ -103,6 +102,10 @@ scraper.prototype.cleanup = function (results) {
   });
   
   _.each(results.prices, function (price) {
+    _.defaults(price, {
+      amount:   0,
+      shipping: 0,
+    });
     price.total = price.amount + price.shipping;
     price.availability = self.parseAvailability(price);
   });

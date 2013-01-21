@@ -4,13 +4,21 @@ var Fetcher = function () {
   
 };
 
+Fetcher.prototype.scrapers = {
+  foyles: require('./src/foyles'),
+};
+
 Fetcher.prototype.fetch = function (options, cb) {
 
-  // just work with one scraper
-  var Foyles = require('./src/foyles');
-  var foyles = new Foyles(options);
+  var scraper_name = options.vendor;
+  var Scraper      = this.scrapers[scraper_name];
 
-  foyles.scrape(cb);
+  if (!Scraper) {
+    return cb(new Error('Scraper for ' + scraper_name + ' not found'));
+  }
+
+  // Run the scraper
+  new Scraper(options).scrape(cb);
 };
 
 module.exports = Fetcher;

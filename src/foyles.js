@@ -46,7 +46,7 @@ Scraper.prototype.jqueryExtract = function ($) {
         shipping:        2.5,
       };
       
-      price.amount = parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, ''));
+      price.amount = parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, '')) || null;
 
       price.availabilityComment = row.find('.Availtext').text().trim();
 
@@ -70,3 +70,52 @@ Scraper.prototype.availabilityTests = {
   ],
 };
 
+Scraper.tests = [
+  {
+    isbn: '9781419704406',
+    expected: {
+      "url": "http://www.foyles.co.uk/witem/art-design/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
+      "title": "Vogue: The Editor's Eye",
+      "authors": [
+        "Anna Wintour",
+        "Conde Nast Publications Inc."
+      ],
+      "prices": [
+        {
+          "amount": 31.5,
+          "availability": true,
+          "availabilityComment": "Despatched in 1 business day.",
+          "condition": "new",
+          "currency": "GBP",
+          "destination": "GB",
+          "shipping": 0,
+          "shippingComment": "Free delivery in the UK for orders over £10",
+          "total": 31.5,
+        }
+      ]
+    }
+  },
+  {
+    isbn: '9780307353139',
+    expected: {
+      "url": "http://www.foyles.co.uk/mpitem/marketplace/4-hour-workweek-escape-9-5-live,timothy-ferriss-9780307353139",
+      "title": "4 hour workweek escape 9 5 live anywhere and join the new rich",
+      "authors": [
+        "timothy ferriss"
+      ],
+      "prices": [
+        {
+          "amount": 0,
+          "availability": false,
+          "availabilityComment": "Available through New & Used Online only",
+          "condition": "new",
+          "currency": "GBP",
+          "destination": "GB",
+          "shipping": 2.5,
+          "shippingComment": "Free delivery in the UK for orders over £10",
+          "total": 2.5,
+        }
+      ],
+    }
+  }
+];
