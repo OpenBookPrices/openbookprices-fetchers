@@ -99,6 +99,10 @@ scraper.prototype.cleanup = function (results) {
       results[key] = val.trim();
     }
   });
+  
+  _.each(results.prices, function (price) {
+    price.total = price.amount + price.shipping;    
+  });
 };
 
 module.exports = scraper;
