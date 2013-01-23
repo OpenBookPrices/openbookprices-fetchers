@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "Anna Wintour",
+    "Conde Nast Publications Inc."
+  ],
+  "prices": [
+    {
+      "amount": 31.5,
+      "availability": true,
+      "availabilityComment": "Despatched in 1 business day.",
+      "condition": "new",
+      "currency": "GBP",
+      "destination": "GB",
+      "shipping": 0,
+      "shippingComment": "Free delivery in the UK for orders over £10",
+      "total": 31.5
+    }
+  ],
+  "title": "Vogue: The Editor's Eye",
+  "url": "http://www.foyles.co.uk/witem/art-design/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406"
+}

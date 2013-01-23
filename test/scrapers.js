@@ -1,68 +1,68 @@
-var _       = require('underscore'),
-    assert  = require('assert'),
-    Fetcher = require('../');
+var _             = require('underscore'),
+    assert        = require('assert'),
+    fs            = require('fs'),
+    path          = require('path'),
+    Fetcher       = require('../'),
+    canonicalJSON = require('canonical-json');
 
+
+function getTests () {
+  var regressionsDir = path.join( path.resolve(__dirname), 'regressions' );
+  var testFileNames  = fs.readdirSync(regressionsDir);
+  
+  
+  var tests = _.map(testFileNames, function (filename) {
+  
+    var parts = path.basename(filename, '.json').split('-');
+    
+    return {
+      expected: path.join( regressionsDir, filename ),
+      vendor:   parts[0],
+      isbn:     parts[1],
+      country:  parts[2],
+      currency: parts[3],      
+    };
+    
+  });
+  
+  return tests;
+}
 
 var fetcher = new Fetcher();
 
-_.each (_.keys(fetcher.scrapers), function (vendor) {
+var overwrite = true;
+
+_.each (getTests(), function (test) {
+
+  var vendor = test.vendor;
+
   describe(vendor, function () {
 
     var Scraper = fetcher.scrapers[vendor];
-    var tests   = Scraper.tests;
     
-    _.each(tests, function (test) {
-      
-      describe(test.isbn, function () {
+    describe(test.isbn, function () {
+    
+      var scraper = new Scraper({ isbn: test.isbn });
+    
+      it('should scrape correctly', function (done) {
 
-        var scraper = new Scraper({ isbn: test.isbn });
+        var expected = JSON.parse( fs.readFileSync(test.expected) );
 
-        it('should scrape correctly', function (done) {
-          scraper.scrape(function (err, actual) {
-            assert.ifError(err);
+        scraper.scrape(function (err, actual) {
+          assert.ifError(err);
+    
+          actual = _.omit(actual, ['startTime', 'endTime', 'totalTime'] );
 
-            actual = _.omit(actual, ['startTime', 'endTime', 'totalTime'] );
+          if (overwrite) {
+            fs.writeFileSync(test.expected, canonicalJSON(actual, null, 2));
+          }
 
-            assert.deepEqual(actual, test.expected);
-            done();
-          });
+          assert.deepEqual(actual, expected);
+          done();
         });
-
       });
-
+    
     });
     
   });
 });
-
-//  {
-//   
-//   describe('WebScraper', function () {
-//     describe('#constructor()', function () {
-//       it('should validate and convert isbn numbers', function () {
-// 
-//         // no isbn throws
-//         assert.throws(
-//           function () { new TestScraper(); },
-//           /Need an isbn/
-//         );
-// 
-//         // bad isbn throws
-//         assert.throws(
-//           function () { new TestScraper({isbn: 'foo'}); },
-//           /Not a valid ISBN "foo"/
-//         );
-// 
-//         // good isbn is ok
-//         var scraper = new TestScraper({ isbn: '978-4-87311-336-4' });
-//         assert.equal(scraper.isbn, '9784873113364');
-// 
-//         // convert isbn10 to isbn13
-//         var scraper2 = new TestScraper({isbn: '4-87311-336-9'});
-//         assert.equal(scraper2.isbn, '9784873113364');
-// 
-//       });
-//     });
-//   });
-//   
-// }
