@@ -6,8 +6,8 @@ var _             = require('underscore'),
     canonicalJSON = require('canonical-json');
 
 
-function getTests () {
-  var regressionsDir = path.join( path.resolve(__dirname), 'regressions' );
+function getTests() {
+  var regressionsDir = path.join(path.resolve(__dirname), 'regressions');
   var testFileNames  = fs.readdirSync(regressionsDir);
   
   
@@ -16,11 +16,11 @@ function getTests () {
     var parts = path.basename(filename, '.json').split('-');
     
     return {
-      expected: path.join( regressionsDir, filename ),
+      expected: path.join(regressionsDir, filename),
       vendor:   parts[0],
       isbn:     parts[1],
       country:  parts[2],
-      currency: parts[3],      
+      currency: parts[3],
     };
     
   });
@@ -32,11 +32,13 @@ var fetcher = new Fetcher();
 
 var overwrite = true;
 
-_.each (getTests(), function (test) {
+_.each(getTests(), function (test) {
 
   var vendor = test.vendor;
 
   describe(vendor, function () {
+    this.timeout(20000); // long time - some sites are slow
+    
 
     var Scraper = fetcher.scrapers[vendor];
     
@@ -46,12 +48,12 @@ _.each (getTests(), function (test) {
     
       it('should scrape correctly', function (done) {
 
-        var expected = JSON.parse( fs.readFileSync(test.expected) );
+        var expected = JSON.parse(fs.readFileSync(test.expected));
 
         scraper.scrape(function (err, actual) {
           assert.ifError(err);
     
-          actual = _.omit(actual, ['startTime', 'endTime', 'totalTime'] );
+          actual = _.omit(actual, ['startTime', 'endTime', 'totalTime']);
 
           if (overwrite) {
             fs.writeFileSync(test.expected, canonicalJSON(actual, null, 2));

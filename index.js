@@ -10,11 +10,11 @@ Fetcher.prototype.scrapers = {
 
 Fetcher.prototype.fetch = function (options, cb) {
 
-  var scraper_name = options.vendor;
-  var Scraper      = this.scrapers[scraper_name];
+  var scraperName = options.vendor;
+  var Scraper     = this.scrapers[scraperName];
 
   if (!Scraper) {
-    return cb(new Error('Scraper for ' + scraper_name + ' not found'));
+    return cb(new Error('Scraper for ' + scraperName + ' not found'));
   }
 
   // Run the scraper
