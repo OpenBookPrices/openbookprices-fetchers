@@ -15,9 +15,11 @@ function getTests() {
   
   var tests = _.map(testFileNames, function (filename) {
   
-    var parts = path.basename(filename, '.json').split('-');
+    var basename = path.basename(filename, '.json');
+    var parts    = basename.split('-');
     
     return {
+      basename: basename,
       expected: path.join(regressionsDir, filename),
       vendor:   parts[0],
       isbn:     parts[1],
@@ -34,39 +36,44 @@ var fetcher = new Fetcher();
 
 var overwrite = true;
 
-_.each(getTests(), function (test) {
+var testsByVendor = _.groupBy(
+  getTests(),
+  function (test) { return test.vendor; }
+);
 
-  var vendor = test.vendor;
+describe('Regression tests', function () {
+  this.timeout(20000); // long time - some sites are slow
 
-  describe(vendor, function () {
-    this.timeout(20000); // long time - some sites are slow
+  _.each(_.keys(testsByVendor).sort(), function (vendor) {
+
+    var vendorTests = testsByVendor[vendor].sort();
+
+    describe(vendor, function () {
+
+      var Scraper = fetcher.scrapers[vendor];
+
+      _.each(vendorTests, function (test) {
     
-
-    var Scraper = fetcher.scrapers[vendor];
-    
-    describe(test.isbn, function () {
-    
-      var scraper = new Scraper({ isbn: test.isbn });
-    
-      it('should scrape correctly', function (done) {
-
-        var expected = JSON.parse(fs.readFileSync(test.expected));
-
-        scraper.scrape(function (err, actual) {
-          assert.ifError(err);
-    
-          actual = _.omit(actual, ['startTime', 'endTime', 'totalTime']);
-
-          if (overwrite) {
-            fs.writeFileSync(test.expected, canonicalJSON(actual, null, 2));
-          }
-
-          assert.deepEqual(actual, expected);
-          done();
+        var scraper = new Scraper({ isbn: test.isbn });
+        
+        it(test.basename, function (done) {
+        
+          var expected = JSON.parse(fs.readFileSync(test.expected));
+        
+          scraper.scrape(function (err, actual) {
+            assert.ifError(err);
+        
+            actual = _.omit(actual, ['startTime', 'endTime', 'totalTime']);
+        
+            if (overwrite) {
+              fs.writeFileSync(test.expected, canonicalJSON(actual, null, 2));
+            }
+        
+            assert.deepEqual(actual, expected);
+            done();
+          });
         });
       });
-    
     });
-    
   });
 });
