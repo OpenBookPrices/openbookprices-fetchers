@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "Hadiz, Vedi, R.",
+    "Dhakidae, Daniel,"
+  ],
+  "prices": [
+    {
+      "amount": 12.95,
+      "availability": true,
+      "availabilityComment": "Printed to order. Despatched in 1 week.",
+      "condition": "new",
+      "currency": "GBP",
+      "destination": "GB",
+      "shipping": 0,
+      "shippingComment": "Free delivery in the UK for orders over £10",
+      "total": 12.95
+    }
+  ],
+  "title": "Social Science and Power in Indonesia",
+  "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016"
+}

@@ -64,6 +64,7 @@ Scraper.prototype.jqueryExtract = function ($) {
 Scraper.prototype.availabilityTests = {
   'yes': [
     /Despatched in \d business day/,
+    /Printed to order\. Despatched in/,
   ],
   'no':  [
     /Available through New & Used Online only/,
