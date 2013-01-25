@@ -5,7 +5,7 @@ var util    = require('util'),
     jsdom   = require('jsdom'),
     fs      = require('fs'),
     request = require('request'),
-    ISBN    = require('isbn').ISBN;
+    ean     = require('ean');
 
 var jquerySource  = fs.readFileSync(__dirname + '/../lib/jquery.js').toString();
 
@@ -16,15 +16,27 @@ var scraper = function () {
 scraper.prototype.init = function (options) {
   _.extend(this, options);
   
+  var isbn = this.isbn;
+
   // Check that we have the values we need
-  if (!this.isbn) {
+  if (!isbn) {
     throw new Error('Need an isbn');
   }
-  var isbn = ISBN.parse(this.isbn);
-  if (!isbn) {
+
+  // Clean up the ISBN number
+  isbn = isbn.replace(/\D/g, '');
+
+  // isbn10 to isbn13 - see http://www.isbn-13.info/ for algorithm
+  if (isbn.length == 10) {
+    isbn = '978' + isbn.substr(0, 9);
+    isbn += ean.checksum(isbn.split(''));
+  }
+
+  if (!ean.isValid(isbn)) {
     throw new Error('Not a valid ISBN "' + this.isbn + '"');
   }
-  this.isbn = isbn.asIsbn13();
+
+  this.isbn = isbn;
 
   this.results = {};
 };

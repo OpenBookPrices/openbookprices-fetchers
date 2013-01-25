@@ -18,7 +18,7 @@
     "jsdom": "~0.3.4",
     "request": "~2.12.0",
     "underscore": "~1.4.3",
-    "isbn": "~0.1.0",
+    "ean": "~0.0.2",
     "mocha": "~1.8.1",
     "jshint": "~0.9.1",
     "canonical-json": "0.0.1"
