@@ -58,7 +58,11 @@ describe('Regression tests', function () {
         
         it(test.basename, function (done) {
         
-          var expected = JSON.parse(fs.readFileSync(test.expected));
+          var content  = fs.readFileSync(test.expected).toString();
+          if (! /^\{/.test(content) ) {
+            content = '{}';
+          }
+          var expected = JSON.parse(content);
         
           scraper.scrape(function (err, actual) {
             assert.ifError(err);
