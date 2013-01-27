@@ -19,12 +19,12 @@ function getTests() {
     var parts    = basename.split('-');
     
     return {
-      basename: basename,
-      expected: path.join(regressionsDir, filename),
-      vendor:   parts[0],
-      isbn:     parts[1],
-      country:  parts[2],
-      currency: parts[3],
+      basename:     basename,
+      expectedFile: path.join(regressionsDir, filename),
+      vendor:       parts[0],
+      isbn:         parts[1],
+      country:      parts[2],
+      currency:     parts[3],
     };
     
   });
@@ -58,22 +58,23 @@ describe('Regression tests', function () {
         
         it(test.basename, function (done) {
         
-          var content  = fs.readFileSync(test.expected).toString();
-          if (! /^\{/.test(content) ) {
-            content = '{}';
-          }
-          var expected = JSON.parse(content);
+          var content  = fs.readFileSync(test.expectedFile).toString();
+          var expected =
+            /^\{/.test(content) ?
+            JSON.parse(content) :
+            null;
         
           scraper.scrape(function (err, actual) {
             assert.ifError(err);
         
             actual = _.omit(actual, ['startTime', 'endTime', 'totalTime']);
         
-            if (overwrite) {
-              fs.writeFileSync(test.expected, canonicalJSON(actual, null, 2));
+            if (! expected || overwrite) {
+              fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
+              assert.ok(expected, 'Had no data to compare to - now written to file. Run tests again.');
+            } else {
+              assert.deepEqual(actual, expected);
             }
-        
-            assert.deepEqual(actual, expected);
             done();
           });
         });
