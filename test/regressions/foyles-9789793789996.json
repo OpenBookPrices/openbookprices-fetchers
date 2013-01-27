@@ -8,8 +8,10 @@
       "availabilityComment": "Not found",
       "country": "GB",
       "currency": "GBP",
+      "isbn": "9789793789996",
       "shipping": false,
-      "total": false
+      "total": false,
+      "vendor": "foyles"
     }
   ],
   "title": "",

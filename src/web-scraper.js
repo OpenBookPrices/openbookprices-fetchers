@@ -140,6 +140,10 @@ scraper.prototype.cleanup = function (results) {
       price.total = price.amount + price.shipping;
     }
     price.availability = self.parseAvailability(price);
+
+    price.isbn  = self.isbn;
+    price.vendor = self.vendorCode;
+
   });
   
   return results;

@@ -13,6 +13,7 @@ var Scraper = module.exports = function (options) {
 
 Scraper.prototype = new WebScraper();
 
+Scraper.prototype.vendorCode = 'foyles';
 Scraper.prototype.countries  = ['GB'];
 Scraper.prototype.currencies = ['GBP']
 

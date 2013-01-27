@@ -11,9 +11,11 @@
       "condition": "new",
       "currency": "GBP",
       "destination": "GB",
+      "isbn": "9780307353139",
       "shipping": 2.5,
       "shippingComment": "Free delivery in the UK for orders over £10",
-      "total": false
+      "total": false,
+      "vendor": "foyles"
     }
   ],
   "title": "4 hour workweek escape 9 5 live anywhere and join the new rich",

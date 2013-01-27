@@ -12,9 +12,11 @@
       "condition": "new",
       "currency": "GBP",
       "destination": "GB",
+      "isbn": "9789793780016",
       "shipping": 0,
       "shippingComment": "Free delivery in the UK for orders over £10",
-      "total": 12.95
+      "total": 12.95,
+      "vendor": "foyles"
     }
   ],
   "title": "Social Science and Power in Indonesia",
