@@ -115,10 +115,13 @@ scraper.prototype.cleanup = function (results) {
   
   _.each(results.prices, function (price) {
     _.defaults(price, {
-      amount:   0,
-      shipping: 0,
+      amount:   false,
+      shipping: false,
+      total:    false,
     });
-    price.total = price.amount + price.shipping;
+    if (_.isNumber(price.amount) && _.isNumber(price.shipping)) {
+      price.total = price.amount + price.shipping;
+    }
     price.availability = self.parseAvailability(price);
   });
   
