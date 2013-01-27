@@ -71,10 +71,14 @@ describe('Regression tests', function () {
         
             if (! expected || overwrite) {
               fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
+            }
+            
+            if (!expected) {
               assert.ok(expected, 'Had no data to compare to - now written to file. Run tests again.');
             } else {
               assert.deepEqual(actual, expected);
             }
+            
             done();
           });
         });
