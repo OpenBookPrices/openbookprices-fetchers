@@ -1,0 +1,17 @@
+{
+  "authors": [],
+  "found": false,
+  "prices": [
+    {
+      "amount": false,
+      "availability": null,
+      "availabilityComment": "Not found",
+      "country": "GB",
+      "currency": "GBP",
+      "shipping": false,
+      "total": false
+    }
+  ],
+  "title": "",
+  "url": "http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=9789793789996"
+}

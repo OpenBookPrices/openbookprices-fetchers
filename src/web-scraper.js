@@ -106,6 +106,23 @@ scraper.prototype.scrape = function (cb) {
 scraper.prototype.cleanup = function (results) {
   var self = this;
 
+  if (!results.found) {
+
+    results.prices = [];
+
+    _.each( self.countries, function (country) {
+      _.each( self.currencies, function (currency) {
+        results.prices.push({
+          country: country,
+          currency: currency,
+          availability: false,
+          availabilityComment: "Not found",
+        })
+      })
+    });
+  }
+
+
   _.each(results, function (val, key) {
     if (_.isString(val)) {
       val = val.replace(/\s+/, ' ');
