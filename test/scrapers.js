@@ -34,7 +34,7 @@ function getTests() {
 
 var fetcher = new Fetcher();
 
-var overwrite = true;
+var overwrite = process.env.OVERWRITE_TESTS;
 
 var testsByVendor = _.groupBy(
   getTests(),
