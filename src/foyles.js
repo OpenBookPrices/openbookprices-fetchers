@@ -15,7 +15,7 @@ Scraper.prototype = new WebScraper();
 
 Scraper.prototype.vendorCode = 'foyles';
 Scraper.prototype.countries  = ['GB'];
-Scraper.prototype.currencies = ['GBP']
+Scraper.prototype.currencies = ['GBP'];
 
 
 Scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=%s';
@@ -25,7 +25,7 @@ Scraper.prototype.jqueryExtract = function ($) {
 
   var results = {};
   
-  results.found = ! /No search results/.test( $('h2.MainTitle').text() );
+  results.found = ! /No search results/.test($('h2.MainTitle').text());
 
   results.title  = $('div.BookTitle').find('span[itemprop=name]').text();
   results.authors = _.map(

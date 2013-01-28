@@ -112,15 +112,15 @@ scraper.prototype.cleanup = function (results) {
 
     results.prices = [];
 
-    _.each( self.countries, function (country) {
-      _.each( self.currencies, function (currency) {
+    _.each(self.countries, function (country) {
+      _.each(self.currencies, function (currency) {
         results.prices.push({
           country: country,
           currency: currency,
           availability: false,
-          availabilityComment: "Not found",
-        })
-      })
+          availabilityComment: 'Not found',
+        });
+      });
     });
   }
 
@@ -154,7 +154,7 @@ scraper.prototype.cleanup = function (results) {
     price.availability = self.parseAvailability(price);
 
     // Set regardless to ensure that they are correct
-    price.isbn  = self.isbn;
+    price.isbn   = self.isbn;
     price.vendor = self.vendorCode;
 
   });
