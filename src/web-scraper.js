@@ -140,6 +140,7 @@ scraper.prototype.cleanup = function (results) {
       shipping: false,
       total:    false,
       ttl:      self.defaultTTL || defaultTTL,
+      url:      results.url,
     });
 
     // Defaults that depend on other values

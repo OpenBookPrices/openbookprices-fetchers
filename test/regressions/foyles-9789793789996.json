@@ -12,6 +12,7 @@
       "shipping": false,
       "total": false,
       "ttl": 86400,
+      "url": "http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=9789793789996",
       "validUntil": 1000086400,
       "vendor": "foyles"
     }

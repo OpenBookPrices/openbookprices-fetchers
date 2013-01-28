@@ -18,6 +18,7 @@ The response is a hash, looking something like this:
   "authors": [
     "Douglas Adams"
   ],
+  "endTime": 1359384179847,
   "found": true,
   "prices": [
     {
@@ -25,16 +26,23 @@ The response is a hash, looking something like this:
       "availability": true,
       "availabilityComment": "Despatched in 1 business day.",
       "condition": "new",
+      "contries": [
+        "GB"
+      ],
       "currency": "GBP",
-      "destination": "GB",
       "isbn": "9780330508537",
       "shipping": 2.5,
       "shippingComment": "Free delivery in the UK for orders over £10",
       "total": 8.09,
+      "ttl": 86400,
+      "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
+      "validUntil": 1359470579,
       "vendor": "foyles"
     }
   ],
+  "startTime": 1359384179481,
   "title": "The Hitchhiker's Guide to the Galaxy",
+  "totalTime": 366,
   "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537"
 }
 ```
@@ -42,9 +50,6 @@ The response is a hash, looking something like this:
 The `authors` and `title` field are optional, but it is nice if they are
 included. The `found` can be `true` or `false` - true meaning that the vendor
 knows about this book.
-
-The `url` is where the specific link on the vendor's site for this book. (NB: it
-may be necessary to move this into the entries in the `prices` array).
 
 The `prices` array should contain an entry for each combination of country and
 currency (note that countries is an array, as often lots of countries will have
@@ -55,6 +60,8 @@ needs to determine.
 The 'shipping' and hence 'total' returned assume that you are only buying the
 one book. The `shippingComment` should be used to clarify if there are discounts
 to be had for buying more (as in the above example).
+
+The `url` is where the specific link on the vendor's site for this book.
 
 Note that the format is similar to, but different from, the format returned by
 the LinkToBooks API.
