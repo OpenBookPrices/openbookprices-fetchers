@@ -45,7 +45,7 @@ Scraper.prototype.jqueryExtract = function ($) {
       }
       
       var price = {
-        destination:     'GB',
+        contries:       ['GB'],
         condition:       'new',
         currency:        'GBP',
         shippingComment: 'Free delivery in the UK for orders over £10',

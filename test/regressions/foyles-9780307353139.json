@@ -9,8 +9,10 @@
       "availability": false,
       "availabilityComment": "Available through New & Used Online only",
       "condition": "new",
+      "contries": [
+        "GB"
+      ],
       "currency": "GBP",
-      "destination": "GB",
       "isbn": "9780307353139",
       "shipping": 2.5,
       "shippingComment": "Free delivery in the UK for orders over £10",
