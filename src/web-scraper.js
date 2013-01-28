@@ -9,6 +9,8 @@ var util    = require('util'),
 
 var jquerySource  = fs.readFileSync(__dirname + '/../lib/jquery.js').toString();
 
+var defaultTTL = 86400;
+
 var scraper = function () {
   
 };
@@ -135,6 +137,7 @@ scraper.prototype.cleanup = function (results) {
       amount:   false,
       shipping: false,
       total:    false,
+      ttl:      self.defaultTTL || defaultTTL,
     });
     if (_.isNumber(price.amount) && _.isNumber(price.shipping)) {
       price.total = price.amount + price.shipping;

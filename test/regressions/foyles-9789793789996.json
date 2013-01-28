@@ -11,6 +11,7 @@
       "isbn": "9789793789996",
       "shipping": false,
       "total": false,
+      "ttl": 86400,
       "vendor": "foyles"
     }
   ],

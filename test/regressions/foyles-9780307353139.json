@@ -17,6 +17,7 @@
       "shipping": 2.5,
       "shippingComment": "Free delivery in the UK for orders over £10",
       "total": false,
+      "ttl": 86400,
       "vendor": "foyles"
     }
   ],
