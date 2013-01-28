@@ -15,10 +15,12 @@ The response is a hash, looking something like this:
 
 ```javascript
 {
+  "_endTime": 1359384300860,
+  "_startTime": 1359384300502,
+  "_totalTime": 358,
   "authors": [
     "Douglas Adams"
   ],
-  "endTime": 1359384179847,
   "found": true,
   "prices": [
     {
@@ -36,13 +38,11 @@ The response is a hash, looking something like this:
       "total": 8.09,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
-      "validUntil": 1359470579,
+      "validUntil": 1359470700,
       "vendor": "foyles"
     }
   ],
-  "startTime": 1359384179481,
   "title": "The Hitchhiker's Guide to the Galaxy",
-  "totalTime": 366,
   "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537"
 }
 ```

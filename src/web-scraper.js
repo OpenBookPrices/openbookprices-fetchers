@@ -45,7 +45,7 @@ scraper.prototype.init = function (options) {
 
 scraper.prototype.get = function (url, cb) {
   var results = this.results;
-  results.startTime = Date.now();
+  results._startTime = Date.now();
 
   // to keep jshint happy
   var httpProxy = 'http_proxy';
@@ -91,8 +91,8 @@ scraper.prototype.scrape = function (cb) {
       _.extend(results, self.jqueryExtract($));
 
 
-      results.endTime = Date.now();
-      results.totalTime = results.endTime - results.startTime;
+      results._endTime = Date.now();
+      results._totalTime = results._endTime - results._startTime;
 
       self.cleanup(results);
 
@@ -145,7 +145,7 @@ scraper.prototype.cleanup = function (results) {
 
     // Defaults that depend on other values
     _.defaults(price, {
-      validUntil: Math.floor(results.startTime / 1000 + price.ttl)
+      validUntil: Math.floor(results._startTime / 1000 + price.ttl)
     });
 
     if (_.isNumber(price.amount) && _.isNumber(price.shipping)) {
