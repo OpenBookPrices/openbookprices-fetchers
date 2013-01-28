@@ -133,17 +133,27 @@ scraper.prototype.cleanup = function (results) {
   });
   
   _.each(results.prices, function (price) {
+    
+    // Initial defaults
     _.defaults(price, {
       amount:   false,
       shipping: false,
       total:    false,
       ttl:      self.defaultTTL || defaultTTL,
     });
+
+    // Defaults that depend on other values
+    _.defaults(price, {
+      validUntil: Math.floor(results.startTime / 1000 + price.ttl)
+    });
+
     if (_.isNumber(price.amount) && _.isNumber(price.shipping)) {
       price.total = price.amount + price.shipping;
     }
+
     price.availability = self.parseAvailability(price);
 
+    // Set regardless to ensure that they are correct
     price.isbn  = self.isbn;
     price.vendor = self.vendorCode;
 

@@ -67,8 +67,19 @@ describe('Regression tests', function () {
           scraper.scrape(function (err, actual) {
             assert.ifError(err);
         
+            var startTimeReference = Math.floor(actual.startTime / 1000);
             actual = _.omit(actual, ['startTime', 'endTime', 'totalTime']);
-        
+
+            // change all the actual times to be relative to a fixed start time.
+            _.each(actual.prices, function (price) {
+              assert.equal(
+                price.validUntil,
+                startTimeReference + price.ttl
+              );
+              // reset using 1_000_000_000 as base
+              price.validUntil = 1000000000 + price.ttl;
+            });
+
             if (! expected || overwrite) {
               fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
             }
