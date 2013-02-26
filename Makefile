@@ -10,4 +10,7 @@ jshint:
 test: node-modules jshint
 	 mocha
 
-PHONY: node-modules test jshint
+test-update:
+	OVERWRITE_TESTS=1 make test
+
+PHONY: node-modules test jshint test-update
