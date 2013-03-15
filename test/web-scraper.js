@@ -1,7 +1,8 @@
 'use strict';
 
 var assert     = require('assert'),
-    WebScraper = require('../src/web-scraper');
+    WebScraper = require('../src/web-scraper'),
+    _          = require('underscore');
 
 var TestScraper = function (options) {
   this.init(options);
@@ -10,27 +11,38 @@ TestScraper.prototype = new WebScraper();
 
 describe('WebScraper', function () {
   describe('#constructor()', function () {
-    it('should validate and convert isbn numbers', function () {
+    it('should validate isbn13 numbers', function () {
       
+      // no isbn throws
+      assert.ok(
+        new TestScraper({isbn: '9784873113364'})
+      );
+
       // no isbn throws
       assert.throws(
         function () { new TestScraper(); },
         /Need an isbn/
       );
 
-      // bad isbn throws
-      assert.throws(
-        function () { new TestScraper({isbn: 'foo'}); },
-        /Not a valid ISBN "foo"/
+      var testISBNs = {
+        'foo'               : new RegExp('Not a valid ISBN13 "foo"'),
+        '978-4-87311-336-4' : new RegExp('Not a valid ISBN13 "978-4-87311-336-4"'),
+        '9784873113360'     : new RegExp('Not a valid ISBN13 "9784873113360"'),
+        '4873113369'        : new RegExp('Not a valid ISBN13 "4873113369"'),
+      };
+
+      // bad configs throw
+      _.each(
+        testISBNs,
+        function (regex, badIsbn) {
+          assert.throws(
+            function () {
+              new TestScraper({isbn: badIsbn});
+            },
+            regex
+          );
+        }
       );
-
-      // good isbn is ok
-      var scraper = new TestScraper({ isbn: '978-4-87311-336-4' });
-      assert.equal(scraper.isbn, '9784873113364');
-
-      // convert isbn10 to isbn13
-      var scraper2 = new TestScraper({isbn: '4-87311-336-9'});
-      assert.equal(scraper2.isbn, '9784873113364');
 
     });
   });

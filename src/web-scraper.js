@@ -25,17 +25,8 @@ scraper.prototype.init = function (options) {
     throw new Error('Need an isbn');
   }
 
-  // Clean up the ISBN number
-  isbn = isbn.replace(/\D/g, '');
-
-  // isbn10 to isbn13 - see http://www.isbn-13.info/ for algorithm
-  if (isbn.length == 10) {
-    isbn = '978' + isbn.substr(0, 9);
-    isbn += ean.checksum(isbn.split(''));
-  }
-
   if (!ean.isValid(isbn)) {
-    throw new Error('Not a valid ISBN "' + this.isbn + '"');
+    throw new Error('Not a valid ISBN13 "' + this.isbn + '"');
   }
 
   this.isbn = isbn;
