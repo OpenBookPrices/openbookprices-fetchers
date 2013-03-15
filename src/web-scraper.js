@@ -31,7 +31,9 @@ scraper.prototype.init = function (options) {
 
   this.isbn = isbn;
 
-  this.results = {};
+  this.results = {
+    isbn: isbn
+  };
 };
 
 scraper.prototype.get = function (url, cb) {
