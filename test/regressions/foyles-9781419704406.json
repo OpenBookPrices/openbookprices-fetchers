@@ -6,9 +6,9 @@
   "found": true,
   "prices": [
     {
-      "amount": 40.5,
+      "amount": 35.1,
       "availability": true,
-      "availabilityComment": "Despatched in 1 business day.",
+      "availabilityComment": "Despatched in 2 business days.",
       "condition": "new",
       "contries": [
         "GB"
@@ -17,7 +17,7 @@
       "isbn": "9781419704406",
       "shipping": 0,
       "shippingComment": "Free delivery in the UK for orders over £10",
-      "total": 40.5,
+      "total": 35.1,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/art-fashion-photography/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "validUntil": 1000086400,
