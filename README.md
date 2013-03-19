@@ -28,7 +28,7 @@ The response is a hash, looking something like this:
       "availability": true,
       "availabilityComment": "Despatched in 1 business day.",
       "condition": "new",
-      "contries": [
+      "countries": [
         "GB"
       ],
       "currency": "GBP",
