@@ -1,12 +1,12 @@
 'use strict';
 
-var util    = require('util'),
-    _       = require('underscore'),
-    jsdom   = require('jsdom'),
-    fs      = require('fs'),
-    request = require('request'),
-    ean     = require('ean'),
-    GeneralScraper = require('./general-scraper');
+var uriTemplateParser   = require('uri-template'),
+    _                   = require('underscore'),
+    jsdom               = require('jsdom'),
+    fs                  = require('fs'),
+    request             = require('request'),
+    ean                 = require('ean'),
+    GeneralScraper      = require('./general-scraper');
 
 var jquerySource  = fs.readFileSync(__dirname + '/../lib/jquery.js').toString();
 
@@ -53,7 +53,7 @@ scraper.prototype.scrape = function (cb) {
   var self    = this;
   var results = this.results;
 
-  var url  = util.format(this.isbnURLTemplate, this.isbn);
+  var url  = uriTemplateParser.parse(this.isbnURLTemplate).expand({isbn: this.isbn});
 
   this.get(
     url,
