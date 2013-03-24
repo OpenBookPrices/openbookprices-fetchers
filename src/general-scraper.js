@@ -1,10 +1,6 @@
 'use strict';
 
-var util    = require('util'),
-    _       = require('underscore'),
-    jsdom   = require('jsdom'),
-    fs      = require('fs'),
-    request = require('request'),
+var _       = require('underscore'),
     ean     = require('ean');
 
 var defaultTTL = 86400;

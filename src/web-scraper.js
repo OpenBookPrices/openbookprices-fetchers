@@ -5,7 +5,6 @@ var uriTemplateParser   = require('uri-template'),
     jsdom               = require('jsdom'),
     fs                  = require('fs'),
     request             = require('request'),
-    ean                 = require('ean'),
     GeneralScraper      = require('./general-scraper');
 
 var jquerySource  = fs.readFileSync(__dirname + '/../lib/jquery.js').toString();
