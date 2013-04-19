@@ -1,14 +1,14 @@
 all: node-modules
 
-node-modules:
-	npm install
-	npm prune
-
 jshint:
 	node_modules/.bin/jshint --config config/jshint-node.json *.js src/ test/
 
-test: node-modules jshint
-	 mocha
+ifdef TRAVIS
+  MOCHA_ARGS = --reporter tap
+endif
+
+test: jshint
+	mocha $(MOCHA_ARGS)
 
 test-update:
 	OVERWRITE_TESTS=1 make test
