@@ -1,8 +1,12 @@
 {
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9780307353139"
+  },
   "authors": [
     "timothy ferriss"
   ],
-  "isbn": "9780307353139",
   "prices": [
     {
       "amount": false,

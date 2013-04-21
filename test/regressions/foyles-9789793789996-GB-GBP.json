@@ -1,6 +1,10 @@
 {
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9789793789996"
+  },
   "found": false,
-  "isbn": "9789793789996",
   "prices": [
     {
       "amount": false,

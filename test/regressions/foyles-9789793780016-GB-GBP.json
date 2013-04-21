@@ -1,9 +1,13 @@
 {
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9789793780016"
+  },
   "authors": [
     "Hadiz, Vedi, R.",
     "Dhakidae, Daniel,"
   ],
-  "isbn": "9789793780016",
   "prices": [
     {
       "amount": 12.95,

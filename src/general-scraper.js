@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var _       = require('underscore'),
-    ean     = require('ean');
+var _       = require("underscore"),
+    ean     = require("ean");
 
 var defaultTTL = 86400;
 
@@ -9,24 +9,34 @@ var scraper = function () {
 
 };
 
-scraper.prototype.init = function (options) {
-  _.extend(this, options);
-
-  var isbn = this.isbn;
+scraper.prototype.init = function (args) {
+  args = args || {};
 
   // Check that we have the values we need
-  if (!isbn) {
-    throw new Error('Need an isbn');
+  if (!args.isbn) {
+    throw new Error("Need an isbn");
+  } else if (!ean.isValid(args.isbn)) {
+    throw new Error("Not a valid ISBN13 '" + args.isbn + "'");
   }
 
-  if (!ean.isValid(isbn)) {
-    throw new Error('Not a valid ISBN13 "' + this.isbn + '"');
+  // Check that we have the values we need
+  if (!args.country) {
+    throw new Error("Need a country");
+  } else if (!_.contains(this.countries, args.country)) {
+    throw new Error("Not a supported country: '" + args.country + "'");
   }
 
-  this.isbn = isbn;
+  // Check that we have the values we need
+  if (!args.currency) {
+    throw new Error("Need a currency");
+  } else if (!_.contains(this.currencies, args.currency)) {
+    throw new Error("Not a supported currency: '" + args.currency + "'");
+  }
+
+  _.extend(this, args);
 
   this.results = {
-    isbn: isbn
+    args: args,
   };
 };
 
@@ -41,7 +51,7 @@ scraper.prototype.cleanup = function (results) {
 
   _.each(results, function (val, key) {
     if (_.isString(val)) {
-      val = val.replace(/\s+/, ' ');
+      val = val.replace(/\s+/, " ");
       results[key] = val.trim();
     }
   });

@@ -1,9 +1,13 @@
 {
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9781419704406"
+  },
   "authors": [
     "Anna Wintour",
     "Conde Nast Publications Inc."
   ],
-  "isbn": "9781419704406",
   "prices": [
     {
       "amount": 31.5,
