@@ -6,12 +6,12 @@ var _       = require('underscore'),
 var defaultTTL = 86400;
 
 var scraper = function () {
-  
+
 };
 
 scraper.prototype.init = function (options) {
   _.extend(this, options);
-  
+
   var isbn = this.isbn;
 
   // Check that we have the values we need
@@ -35,22 +35,9 @@ scraper.prototype.init = function (options) {
 scraper.prototype.cleanup = function (results) {
   var self = this;
 
-  if (!results.found) {
-
-    results.prices = [];
-
-    _.each(self.countries, function (country) {
-      _.each(self.currencies, function (currency) {
-        results.prices.push({
-          country: country,
-          currency: currency,
-          availability: false,
-          availabilityComment: 'Not found',
-        });
-      });
-    });
-  }
-
+  _.defaults(results, {
+    prices: [],
+  });
 
   _.each(results, function (val, key) {
     if (_.isString(val)) {
@@ -58,9 +45,9 @@ scraper.prototype.cleanup = function (results) {
       results[key] = val.trim();
     }
   });
-  
+
   _.each(results.prices, function (price) {
-    
+
     // Initial defaults
     _.defaults(price, {
       amount:   false,
@@ -86,7 +73,7 @@ scraper.prototype.cleanup = function (results) {
     price.vendor = self.vendorCode;
 
   });
-  
+
   return results;
 };
 
@@ -98,10 +85,10 @@ scraper.prototype.parseAvailability = function (price) {
 
   var yesTests = this.availabilityTests.yes;
   var noTests  = this.availabilityTests.no;
-  
+
   if (_.any(yesTests, tester)) { return true;  }
   if (_.any(noTests,  tester)) { return false; }
-  
+
   return null;
 };
 
