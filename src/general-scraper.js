@@ -56,6 +56,13 @@ scraper.prototype.cleanup = function (results) {
     }
   });
 
+  // strip all keys starting with underscore
+  _.each(results, function (val, key) {
+    if ((/^_/).test(key)) {
+      delete results[key];
+    }
+  });
+
   _.each(results.prices, function (price) {
 
     // Initial defaults

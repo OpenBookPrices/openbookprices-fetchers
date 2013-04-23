@@ -67,20 +67,8 @@ describe('Regression tests', function () {
           scraper.scrape(function (err, actual) {
             assert.ifError(err);
 
-            var startTimeReference = Math.floor(actual._startTime / 1000);
-
-            // strip all keys starting with underscore
-            actual = _.omit(
-              actual,
-              _.filter(_.keys(actual), function (val) { return (/^_/).test(val); })
-            );
-
             // change all the actual times to be relative to a fixed start time.
             _.each(actual.prices, function (price) {
-              assert.equal(
-                price.validUntil,
-                startTimeReference + price.ttl
-              );
               // reset using 1_000_000_000 as base
               price.validUntil = 1000000000 + price.ttl;
             });
