@@ -17,56 +17,64 @@ The response is a hash, looking something like this:
 
 ```javascript
 {
-  "_endTime": 1359384300860,
-  "_startTime": 1359384300502,
-  "_totalTime": 358,
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9780330508537",
+    "vendor": "foyles"
+  },
   "authors": [
     "Douglas Adams"
   ],
-  "found": true,
+  "title": "The Hitchhiker's Guide to the Galaxy",
+  "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
   "prices": [
     {
+      "countries": [ "GB" ],
+      "currency": "GBP",
+      "isbn": "9780330508537",
+      "vendor": "foyles",
       "amount": 5.59,
       "availability": true,
       "availabilityComment": "Despatched in 1 business day.",
+      "canSell": true,
       "condition": "new",
-      "countries": [
-        "GB"
-      ],
-      "currency": "GBP",
-      "isbn": "9780330508537",
       "shipping": 2.5,
-      "shippingComment": "Free delivery in the UK for orders over £10",
+      "shippingComment": "Free second class delivery in the UK for orders over £10",
       "total": 8.09,
-      "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
-      "validUntil": 1359470700,
-      "vendor": "foyles"
-    }
-  ],
-  "title": "The Hitchhiker's Guide to the Galaxy",
-  "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537"
+      "ttl": 86400,
+      "validUntil": 1366821341,
+    },
+    ....
+  ]
 }
 ```
 
-The `authors` and `title` field are optional, but it is nice if they are
-included. The `found` can be `true` or `false` - true meaning that the vendor
-knows about this book.
+### Guide to the keys
 
-The `prices` array should contain an entry for each combination of country and
-currency (note that countries is an array, as often lots of countries will have
-the same price). The `availability` flag is true if the vendor can supply this
-book, false otherwise. What "can supply" means is something that each scrapers
-needs to determine.
+#### `authors` and `title`
+
+Text. These fields are optional, but it is nice if they are included.
+
+#### `prices`
+
+Array. The `prices` array should contain an entry for each combination of
+country and currency (note that `countries` is an array, as often lots of
+countries will have the same price). The `availability` flag is true if the
+vendor can supply this book, false otherwise. What `canSell` means is something
+that each scrapers needs to determine, but generally `true` mean that they can
+sell it, and `false` means they can (don't stock it, book not found on their
+site, out of stock etc).
 
 The 'shipping' and hence 'total' returned assume that you are only buying the
 one book. The `shippingComment` should be used to clarify if there are discounts
 to be had for buying more (as in the above example).
 
-The `url` is where the specific link on the vendor's site for this book.
+The `url` is to the page on the vendor's site for this book.
 
 Note that the format is similar to, but different from, the format returned by
-the LinkToBooks API.
+the [LinkToBooks API](https://github.com/LinkToBooks/l2b-api).
 
 ## Proxy
 
