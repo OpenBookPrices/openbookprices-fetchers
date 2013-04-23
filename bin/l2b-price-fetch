@@ -6,14 +6,16 @@ var program = require("commander"),
 
 program
   .version("0.0.1")
-  .option("-i, --isbn <isbn>",     "Book's ISBN")
-  .option("-v, --vendor <vendor>", "Vendor code");
+  .option("-i, --isbn <isbn>",     "  Book's ISBN")
+  .option("-c, --country <country>", "Country code")
+  .option("-u, --currency <vendor>", "Currency code")
+  .option("-v, --vendor <vendor>",   "Vendor code");
 
 program.parse(process.argv);
 
-// check that we have both isbn and vendor
-if (!program.isbn || !program.vendor) {
-  console.error('need isbn and vendor');
+// check that we have all required args
+if (!program.isbn || !program.vendor || !program.country || !program.currency) {
+  console.error('Usage: l2b-price-fetch --isbn .... --vendor .... --country GB --currency GBP');
   process.exit(1);
 }
 
@@ -27,8 +29,10 @@ console.log(
 
 fetcher.fetch(
   {
-    isbn:   program.isbn,
-    vendor: program.vendor,
+    isbn:     program.isbn,
+    vendor:   program.vendor,
+    country:  program.country,
+    currency: program.currency,
   },
   function (err, data) {
     if (err) {throw err};
