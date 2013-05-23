@@ -29,11 +29,15 @@ Fetcher.vendorsForCountry = function (country) {
   return countryToVendors[country] || [];
 };
 
+Fetcher.vendorCodes = function () {
+  return _.keys(scrapers);
+};
+
 
 Fetcher.fetch = function (options, cb) {
 
   var scraperName = options.vendor;
-  var Scraper     = this.scrapers[scraperName];
+  var Scraper     = scrapers[scraperName];
 
   if (!Scraper) {
     return cb(new Error("Scraper for " + scraperName + " not found"));
