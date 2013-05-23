@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require("commander"),
-    Fetcher = require("../"),
+    fetcher = require("../"),
     canonicalJSON = require('canonical-json');
 
 program
@@ -19,7 +19,6 @@ if (!program.isbn || !program.vendor || !program.country || !program.currency) {
   process.exit(1);
 }
 
-var fetcher = new Fetcher();
 
 console.log(
   "Fetching price etc for '%s' from '%s'",

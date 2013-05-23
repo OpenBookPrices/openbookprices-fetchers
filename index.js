@@ -6,7 +6,7 @@ var Fetcher = function () {
 
 };
 
-var scrapers = Fetcher.prototype.scrapers = {
+var scrapers = {
   foyles: require("./src/foyles"),
 };
 
@@ -21,12 +21,16 @@ _.each(scrapers, function (Scraper, vendor) {
 });
 
 
-Fetcher.prototype.vendorsForCountry = function (country) {
+Fetcher.getScraper = function (code) {
+  return scrapers[code];
+};
+
+Fetcher.vendorsForCountry = function (country) {
   return countryToVendors[country] || [];
 };
 
 
-Fetcher.prototype.fetch = function (options, cb) {
+Fetcher.fetch = function (options, cb) {
 
   var scraperName = options.vendor;
   var Scraper     = this.scrapers[scraperName];

@@ -1,10 +1,9 @@
 "use strict";
 
 var assert         = require("assert"),
-    Fetcher        = require(".."),
+    fetcher        = require(".."),
     _              = require("underscore");
 
-var fetcher = new Fetcher();
 
 describe("Fetcher", function () {
   describe("scrapers by country", function () {

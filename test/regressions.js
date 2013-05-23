@@ -4,7 +4,7 @@ var _             = require('underscore'),
     assert        = require('assert'),
     fs            = require('fs'),
     path          = require('path'),
-    Fetcher       = require('../'),
+    fetcher       = require('../'),
     canonicalJSON = require('canonical-json');
 
 
@@ -32,8 +32,6 @@ function getTests() {
   return tests;
 }
 
-var fetcher = new Fetcher();
-
 var overwrite = process.env.OVERWRITE_TESTS;
 
 var testsByVendor = _.groupBy(
@@ -50,7 +48,7 @@ describe('Regression tests', function () {
 
     describe(vendor, function () {
 
-      var Scraper = fetcher.scrapers[vendor];
+      var Scraper = fetcher.getScraper(vendor);
 
       _.each(vendorTests, function (test) {
 
