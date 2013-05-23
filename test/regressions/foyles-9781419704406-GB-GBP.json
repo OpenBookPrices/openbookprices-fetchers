@@ -10,7 +10,7 @@
   ],
   "prices": [
     {
-      "amount": 31.5,
+      "amount": 34.2,
       "availability": true,
       "availabilityComment": "Despatched in 2 business days.",
       "canSell": true,
@@ -22,14 +22,14 @@
       "isbn": "9781419704406",
       "shipping": 0,
       "shippingComment": "Free second class delivery in the UK for orders over £10",
-      "total": 31.5,
+      "total": 34.2,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "validUntil": 1000086400,
       "vendor": "foyles"
     },
     {
-      "amount": 31.5,
+      "amount": 34.2,
       "availability": true,
       "availabilityComment": "Despatched in 2 business days.",
       "canSell": true,
@@ -55,14 +55,14 @@
       "isbn": "9781419704406",
       "shipping": 5,
       "shippingComment": "Air mail from UK: 4 - 14 days",
-      "total": 36.5,
+      "total": 39.2,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "validUntil": 1000086400,
       "vendor": "foyles"
     },
     {
-      "amount": 31.5,
+      "amount": 34.2,
       "availability": true,
       "availabilityComment": "Despatched in 2 business days.",
       "canSell": true,
@@ -75,14 +75,14 @@
       "isbn": "9781419704406",
       "shipping": 7,
       "shippingComment": "Air mail from UK: 4 - 14 days",
-      "total": 38.5,
+      "total": 41.2,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "validUntil": 1000086400,
       "vendor": "foyles"
     },
     {
-      "amount": 31.5,
+      "amount": 34.2,
       "availability": true,
       "availabilityComment": "Despatched in 2 business days.",
       "canSell": true,
@@ -322,7 +322,7 @@
       "isbn": "9781419704406",
       "shipping": 8,
       "shippingComment": "Air mail from UK: 7 - 21 days",
-      "total": 39.5,
+      "total": 42.2,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "validUntil": 1000086400,
