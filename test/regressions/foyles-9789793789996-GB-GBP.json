@@ -4,13 +4,8 @@
     "currency": "GBP",
     "isbn": "9789793789996"
   },
-  "found": false,
-  "prices": [
+  "entries": [
     {
-      "amount": false,
-      "availability": null,
-      "canSell": false,
-      "canSellComment": "Book not found on the website",
       "countries": [
         "AD",
         "AE",
@@ -261,12 +256,11 @@
         "ZW"
       ],
       "currency": "GBP",
+      "expires": 1000086400,
+      "formats": {},
       "isbn": "9789793789996",
-      "shipping": false,
-      "total": false,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn=9789793789996",
-      "validUntil": 1000086400,
       "vendor": "foyles"
     }
   ],

@@ -46,7 +46,7 @@ scraper.prototype.cleanup = function (results) {
   var self = this;
 
   _.defaults(results, {
-    prices: [],
+    entries: [],
   });
 
   _.each(results, function (val, key) {
@@ -63,50 +63,60 @@ scraper.prototype.cleanup = function (results) {
     }
   });
 
-  _.each(results.prices, function (price) {
+  _.each(results.entries, function (entry) {
 
     // Initial defaults
-    _.defaults(price, {
-      amount:   false,
-      shipping: false,
-      total:    false,
-      ttl:      self.defaultTTL || defaultTTL,
-      url:      results.url,
+    _.defaults(entry, {
+      ttl:    self.defaultTTL || defaultTTL,
+      url:    results.url,
+      formats: {},
     });
+
+
+    // If the price is null then delete entire entry
+    _.each(
+      _.keys(entry.formats),
+      function (format) {
+        if (_.isNull(entry.formats[format].price)) {
+          delete entry.formats[format];
+        }
+      }
+    );
+
+    // Default all the formats for the various conditions
+    _.each(
+      _.values(entry.formats),
+      function (price) {
+        _.defaults(price, {
+          price: null,
+          shipping: null,
+          total: null,
+          shippingNote: null,
+          availabilityNote: null,
+        });
+
+        if (_.isNumber(price.price)) {
+          price.total = price.price;
+          if (_.isNumber(price.shipping)) {
+            price.total += price.shipping;
+          }
+        }
+
+      }
+    );
 
     // Defaults that depend on other values
-    _.defaults(price, {
-      validUntil: Math.floor(results._startTime / 1000 + price.ttl)
+    _.defaults(entry, {
+      expires: Math.floor(Date.now() / 1000) + entry.ttl,
     });
 
-    if (_.isNumber(price.amount) && _.isNumber(price.shipping)) {
-      price.total = price.amount + price.shipping;
-    }
-
-    price.availability = self.parseAvailability(price);
-
     // Set regardless to ensure that they are correct
-    price.isbn   = self.isbn;
-    price.vendor = self.vendorCode;
+    entry.isbn   = self.isbn;
+    entry.vendor = self.vendorCode;
 
   });
 
   return results;
-};
-
-scraper.prototype.parseAvailability = function (price) {
-
-  var tester = function (regex) {
-    return regex.test(price.availabilityComment);
-  };
-
-  var yesTests = this.availabilityTests.yes;
-  var noTests  = this.availabilityTests.no;
-
-  if (_.any(yesTests, tester)) { return true;  }
-  if (_.any(noTests,  tester)) { return false; }
-
-  return null;
 };
 
 module.exports = scraper;

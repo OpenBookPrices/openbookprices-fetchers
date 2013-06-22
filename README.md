@@ -15,7 +15,7 @@ cleaned up as needed.
 
 The response is a hash, looking something like this:
 
-```javascript
+``` json
 {
   "args": {
     "country": "GB",
@@ -28,25 +28,28 @@ The response is a hash, looking something like this:
   ],
   "title": "The Hitchhiker's Guide to the Galaxy",
   "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
-  "prices": [
+  "entries": [
     {
-      "countries": [ "GB" ],
+      "countries": [
+        "GB"
+      ],
       "currency": "GBP",
+      "expires": 1371993232,
+      "formats": {
+        "new": {
+          "availabilityNote": "Despatched in 1 business day.",
+          "price": 5.83,
+          "shipping": 2.5,
+          "shippingNote": "Free second class delivery in the UK for orders over £10",
+          "total": 8.33
+        }
+      },
       "isbn": "9780330508537",
-      "vendor": "foyles",
-      "amount": 5.59,
-      "availability": true,
-      "availabilityComment": "Despatched in 1 business day.",
-      "canSell": true,
-      "condition": "new",
-      "shipping": 2.5,
-      "shippingComment": "Free second class delivery in the UK for orders over £10",
-      "total": 8.09,
-      "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
       "ttl": 86400,
-      "validUntil": 1366821341,
+      "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
+      "vendor": "foyles"
     },
-    ....
+    ...
   ]
 }
 ```
@@ -57,9 +60,9 @@ The response is a hash, looking something like this:
 
 Text. These fields are optional, but it is nice if they are included.
 
-#### `prices`
+#### `entries`
 
-Array. The `prices` array should contain an entry for each combination of
+Array. The `entries` array should contain an entry for each combination of
 country and currency (note that `countries` is an array, as often lots of
 countries will have the same price). The `availability` flag is true if the
 vendor can supply this book, false otherwise. What `canSell` means is something
@@ -68,7 +71,7 @@ sell it, and `false` means they can (don't stock it, book not found on their
 site, out of stock etc).
 
 The 'shipping' and hence 'total' returned assume that you are only buying the
-one book. The `shippingComment` should be used to clarify if there are discounts
+one book. The `shippingNote` should be used to clarify if there are discounts
 to be had for buying more (as in the above example).
 
 The `url` is to the page on the vendor's site for this book.

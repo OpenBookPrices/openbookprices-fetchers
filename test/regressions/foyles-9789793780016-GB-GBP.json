@@ -8,32 +8,28 @@
     "Hadiz, Vedi, R.",
     "Dhakidae, Daniel,"
   ],
-  "prices": [
+  "entries": [
     {
-      "amount": 12.95,
-      "availability": true,
-      "availabilityComment": "Printed to order. Despatched in 1 week.",
-      "canSell": true,
-      "condition": "new",
       "countries": [
         "GB"
       ],
       "currency": "GBP",
+      "expires": 1000086400,
+      "formats": {
+        "new": {
+          "availabilityNote": "Printed to order. Despatched in 1 week.",
+          "price": 12.95,
+          "shipping": 0,
+          "shippingNote": "Free second class delivery in the UK for orders over £10",
+          "total": 12.95
+        }
+      },
       "isbn": "9789793780016",
-      "shipping": 0,
-      "shippingComment": "Free second class delivery in the UK for orders over £10",
-      "total": 12.95,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
-      "validUntil": 1000086400,
       "vendor": "foyles"
     },
     {
-      "amount": 12.95,
-      "availability": true,
-      "availabilityComment": "Printed to order. Despatched in 1 week.",
-      "canSell": true,
-      "condition": "new",
       "countries": [
         "AT",
         "BE",
@@ -52,41 +48,43 @@
         "CH"
       ],
       "currency": "GBP",
+      "expires": 1000086400,
+      "formats": {
+        "new": {
+          "availabilityNote": "Printed to order. Despatched in 1 week.",
+          "price": 12.95,
+          "shipping": 5,
+          "shippingNote": "Air mail from UK: 4 - 14 days",
+          "total": 17.95
+        }
+      },
       "isbn": "9789793780016",
-      "shipping": 5,
-      "shippingComment": "Air mail from UK: 4 - 14 days",
-      "total": 17.95,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
-      "validUntil": 1000086400,
       "vendor": "foyles"
     },
     {
-      "amount": 12.95,
-      "availability": true,
-      "availabilityComment": "Printed to order. Despatched in 1 week.",
-      "canSell": true,
-      "condition": "new",
       "countries": [
         "US",
         "CA"
       ],
       "currency": "GBP",
+      "expires": 1000086400,
+      "formats": {
+        "new": {
+          "availabilityNote": "Printed to order. Despatched in 1 week.",
+          "price": 12.95,
+          "shipping": 7,
+          "shippingNote": "Air mail from UK: 4 - 14 days",
+          "total": 19.95
+        }
+      },
       "isbn": "9789793780016",
-      "shipping": 7,
-      "shippingComment": "Air mail from UK: 4 - 14 days",
-      "total": 19.95,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
-      "validUntil": 1000086400,
       "vendor": "foyles"
     },
     {
-      "amount": 12.95,
-      "availability": true,
-      "availabilityComment": "Printed to order. Despatched in 1 week.",
-      "canSell": true,
-      "condition": "new",
       "countries": [
         "AD",
         "AE",
@@ -319,13 +317,19 @@
         "ZW"
       ],
       "currency": "GBP",
+      "expires": 1000086400,
+      "formats": {
+        "new": {
+          "availabilityNote": "Printed to order. Despatched in 1 week.",
+          "price": 12.95,
+          "shipping": 8,
+          "shippingNote": "Air mail from UK: 7 - 21 days",
+          "total": 20.95
+        }
+      },
       "isbn": "9789793780016",
-      "shipping": 8,
-      "shippingComment": "Air mail from UK: 7 - 21 days",
-      "total": 20.95,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
-      "validUntil": 1000086400,
       "vendor": "foyles"
     }
   ],

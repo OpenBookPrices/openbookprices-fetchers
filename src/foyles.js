@@ -46,32 +46,30 @@ Scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/Public/Shop/Search.
 
 Scraper.prototype.jqueryExtract = function ($) {
 
-  var results = {};
+  var results = {
+    entries: [],
+  };
 
   if (/No search results/.test($('h2.MainTitle').text())) {
-    results.found = false;
-    results.prices = [];
 
-    var notFoundPrice = {
+    var notFoundEntry = {
       countries: regions.all,
-      canSell: false,
-      canSellComment: 'Book not found on the website',
+      formats: {},
     };
 
     _.each(this.currencies, function (currency) {
-      results.prices.push(_.extend({ currency: currency }, notFoundPrice));
+      results.entries.push(_.extend({ currency: currency }, notFoundEntry));
     });
 
     return results;
   }
 
+  // FIXME - remove this
   results.title  = $('div.BookTitle').find('span[itemprop=name]').text();
   results.authors = _.map(
     $('div.Author').first().find('a'),
     function (author) { return $(author).text().trim(); }
   );
-
-  var prices = results.prices = [];
 
   $('div.PurchaseTable')
     .find('tr.DarkGrey')
@@ -82,56 +80,60 @@ Scraper.prototype.jqueryExtract = function ($) {
         return;
       }
 
+      var baseFormat = {
+        price:            parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, '')) || null,
+        availabilityNote: row.find('.Availtext').text().trim(),
+      };
+      
       var basePrice = {
-        condition: 'new',
         currency:  'GBP',
-        canSell:   true,
       };
 
-      var amount = basePrice.amount = parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, '')) || null;
-      basePrice.availabilityComment = row.find('.Availtext').text().trim();
-
       // UK
-      prices.push(_.extend({}, basePrice, {
+      results.entries.push(_.extend({}, basePrice, {
         countries: regions.uk,
-        shipping: amount < 10 ? 2.5 : 0,
-        shippingComment: 'Free second class delivery in the UK for orders over £10',
+        formats: {
+          new: _.extend({
+            shipping: baseFormat.price < 10 ? 2.5 : 0,
+            shippingNote: 'Free second class delivery in the UK for orders over £10',
+          }, baseFormat),
+        }
       }));
 
       // Europe
-      prices.push(_.extend({}, basePrice, {
+      results.entries.push(_.extend({}, basePrice, {
         countries: regions.europe,
-        shipping: 5,
-        shippingComment: 'Air mail from UK: 4 - 14 days',
+        formats: {
+          new: _.extend({
+            shipping: 5,
+            shippingNote: 'Air mail from UK: 4 - 14 days',
+          }, baseFormat),
+        }
       }));
 
       // N. America
-      prices.push(_.extend({}, basePrice, {
+      results.entries.push(_.extend({}, basePrice, {
         countries: regions.northAmerica,
-        shipping: 7,
-        shippingComment: 'Air mail from UK: 4 - 14 days',
+        formats: {
+          new: _.extend({
+            shipping: 7,
+            shippingNote: 'Air mail from UK: 4 - 14 days',
+          }, baseFormat),
+        }
       }));
 
       // N. America
-      prices.push(_.extend({}, basePrice, {
+      results.entries.push(_.extend({}, basePrice, {
         countries: regions.restOfWorld,
-        shipping: 8,
-        shippingComment: 'Air mail from UK: 7 - 21 days',
+        formats: {
+          new: _.extend({
+            shipping: 8,
+            shippingNote: 'Air mail from UK: 7 - 21 days',
+          }, baseFormat),
+        }
       }));
 
     });
 
   return results;
 };
-
-
-Scraper.prototype.availabilityTests = {
-  'yes': [
-    /Despatched in \d business day/,
-    /Printed to order\. Despatched in/,
-  ],
-  'no':  [
-    /Available through New & Used Online only/,
-  ],
-};
-

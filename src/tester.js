@@ -20,7 +20,7 @@ Scraper.prototype.isbnURLTemplate = 'http://www.example.com/book%s';
 Scraper.prototype.jqueryExtract = function ($) {
 
   var results = {};
-  
+
   results.found = ! /No search results/.test($('h2.MainTitle').text());
 
   results.title  = $('div.BookTitle').find('span[itemprop=name]').text();
@@ -29,8 +29,8 @@ Scraper.prototype.jqueryExtract = function ($) {
     function (author) { return $(author).text().trim(); }
   );
 
-  var prices = results.prices = [];
-  
+  var formats = results.formats = [];
+
   $('div.PurchaseTable')
     .find('tr.DarkGrey')
     .first()
@@ -39,37 +39,26 @@ Scraper.prototype.jqueryExtract = function ($) {
       if (! row.attr('class')) {
         return;
       }
-      
+
       var price = {
         countries:       ['GB'],
         condition:       'new',
         currency:        'GBP',
-        shippingComment: 'Free delivery in the UK for orders over £10',
+        shippingNote: 'Free delivery in the UK for orders over £10',
         shipping:        2.5,
       };
-      
-      price.amount = parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, '')) || null;
 
-      price.availabilityComment = row.find('.Availtext').text().trim();
+      price.price = parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, '')) || null;
 
-      if (price.amount >= 10) {
+      price.availabilityNote = row.find('.Availtext').text().trim();
+
+      if (price.price >= 10) {
         price.shipping = 0;
       }
 
-      prices.push(price);
+      formats.push(price);
     });
-  
+
   return results;
-};
-
-
-Scraper.prototype.availabilityTests = {
-  'yes': [
-    /Despatched in \d business day/,
-    /Printed to order\. Despatched in/,
-  ],
-  'no':  [
-    /Available through New & Used Online only/,
-  ],
 };
 

@@ -66,9 +66,9 @@ describe('Regression tests', function () {
             assert.ifError(err);
 
             // change all the actual times to be relative to a fixed start time.
-            _.each(actual.prices, function (price) {
+            _.each(actual.entries, function (entry) {
               // reset using 1_000_000_000 as base
-              price.validUntil = 1000000000 + price.ttl;
+              entry.expires = 1000000000 + entry.ttl;
             });
 
             if (! expected || overwrite) {
