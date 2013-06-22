@@ -29,6 +29,10 @@ Fetcher.vendorsForCountry = function (country) {
   return countryToVendors[country] || [];
 };
 
+Fetcher.allVendorCodes = function () {
+  return _.keys(scrapers);
+};
+
 Fetcher.vendorCodes = function () {
   return _.keys(scrapers);
 };
