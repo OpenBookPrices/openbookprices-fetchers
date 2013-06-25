@@ -70,6 +70,7 @@ scraper.prototype.cleanup = function (results) {
       ttl:    self.defaultTTL || defaultTTL,
       url:    results.url,
       formats: {},
+      updated: Math.floor(Date.now() / 1000),
     });
 
 
@@ -104,11 +105,6 @@ scraper.prototype.cleanup = function (results) {
 
       }
     );
-
-    // Defaults that depend on other values
-    _.defaults(entry, {
-      expires: Math.floor(Date.now() / 1000) + entry.ttl,
-    });
 
     // Set regardless to ensure that they are correct
     entry.isbn   = self.isbn;

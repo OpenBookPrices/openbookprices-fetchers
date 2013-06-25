@@ -34,7 +34,6 @@ The response is a hash, looking something like this:
         "GB"
       ],
       "currency": "GBP",
-      "expires": 1371993232,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -45,6 +44,7 @@ The response is a hash, looking something like this:
         }
       },
       "isbn": "9780330508537",
+      "updated": 1371993232,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/fiction-poetry/the-hitchhikers-guide-to-the-galaxy,douglas-adams-9780330508537",
       "vendor": "foyles"

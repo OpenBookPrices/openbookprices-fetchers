@@ -14,7 +14,7 @@
         "GB"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -48,7 +48,7 @@
         "CH"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -69,7 +69,7 @@
         "CA"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -317,7 +317,7 @@
         "ZW"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",

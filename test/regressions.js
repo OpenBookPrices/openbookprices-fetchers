@@ -68,7 +68,7 @@ describe('Regression tests', function () {
             // change all the actual times to be relative to a fixed start time.
             _.each(actual.entries, function (entry) {
               // reset using 1_000_000_000 as base
-              entry.expires = 1000000000 + entry.ttl;
+              entry.updated = 1000000000;
             });
 
             if (! expected || overwrite) {

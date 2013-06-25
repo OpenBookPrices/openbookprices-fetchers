@@ -13,7 +13,7 @@
         "GB"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {},
       "isbn": "9780307353139",
       "ttl": 86400,
@@ -39,7 +39,7 @@
         "CH"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {},
       "isbn": "9780307353139",
       "ttl": 86400,
@@ -52,7 +52,7 @@
         "CA"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {},
       "isbn": "9780307353139",
       "ttl": 86400,
@@ -292,7 +292,7 @@
         "ZW"
       ],
       "currency": "GBP",
-      "expires": 1000086400,
+      "updated": 1000000000,
       "formats": {},
       "isbn": "9780307353139",
       "ttl": 86400,
