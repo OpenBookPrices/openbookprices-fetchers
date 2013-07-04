@@ -6,6 +6,7 @@ var assert         = require("assert"),
 
 
 describe("Fetcher", function () {
+
   describe("scrapers by country", function () {
 
     it("should return foyles for GB", function () {
@@ -19,4 +20,29 @@ describe("Fetcher", function () {
     });
 
   });
+
+  describe("currencies", function () {
+
+    it("should return default currency", function () {
+      assert.equal(
+        fetcher.currencyForVendor("foyles"),
+        "GBP"
+      );
+    });
+
+    it("should return same currency if supported", function () {
+      assert.equal(
+        fetcher.currencyForVendor("foyles", "GBP"),
+        "GBP"
+      );
+    });
+
+    it("should return default currency if not supported", function () {
+      assert.equal(
+        fetcher.currencyForVendor("foyles", "SEK"),
+        "GBP"
+      );
+    });
+  });
+
 });

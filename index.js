@@ -29,6 +29,27 @@ Fetcher.vendorsForCountry = function (country) {
   return countryToVendors[country] || [];
 };
 
+Fetcher.currencyForVendor = function (scraperName, optionalCurrency) {
+  if (!optionalCurrency) {
+    optionalCurrency = "";
+  }
+  
+  var Scraper = scrapers[scraperName];
+  if (!Scraper) {
+    throw new Error("scraper '" + scraperName + "' not found");
+  }
+    
+  var currencies = Scraper.prototype.currencies;
+
+  if (_.contains(currencies, optionalCurrency)) {
+    return optionalCurrency;
+  } else {
+    return currencies[0];
+  }
+  
+};
+
+
 Fetcher.allVendorCodes = function () {
   return _.keys(scrapers);
 };
