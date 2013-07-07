@@ -70,7 +70,7 @@ scraper.prototype.cleanup = function (results) {
       ttl:    self.defaultTTL || defaultTTL,
       url:    results.url,
       formats: {},
-      updated: Math.floor(Date.now() / 1000),
+      timestamp: Math.floor(Date.now() / 1000),
     });
 
 

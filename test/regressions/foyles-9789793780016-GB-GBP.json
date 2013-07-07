@@ -14,7 +14,7 @@
         "GB"
       ],
       "currency": "GBP",
-      "updated": 1000000000,
+      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -48,7 +48,7 @@
         "CH"
       ],
       "currency": "GBP",
-      "updated": 1000000000,
+      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -69,7 +69,7 @@
         "CA"
       ],
       "currency": "GBP",
-      "updated": 1000000000,
+      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -317,7 +317,7 @@
         "ZW"
       ],
       "currency": "GBP",
-      "updated": 1000000000,
+      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",

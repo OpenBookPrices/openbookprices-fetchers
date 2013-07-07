@@ -256,7 +256,7 @@
         "ZW"
       ],
       "currency": "GBP",
-      "updated": 1000000000,
+      "timestamp": 1000000000,
       "formats": {},
       "isbn": "9789793789996",
       "ttl": 86400,
