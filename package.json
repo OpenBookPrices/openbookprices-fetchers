@@ -24,6 +24,7 @@
     "canonical-json": "0.0.1",
     "uri-template": "~0.3.4",
     "country-data": "0.0.3",
-    "apac": "git+https://github.com/dmcquay/node-apac.git#ea90b896d23207db4791a507588a3f993cef8fad"
+    "apac": "git+https://github.com/dmcquay/node-apac.git#ea90b896d23207db4791a507588a3f993cef8fad",
+    "config": "~0.4.29"
   }
 }
