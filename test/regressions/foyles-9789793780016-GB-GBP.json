@@ -14,7 +14,6 @@
         "GB"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -25,6 +24,7 @@
         }
       },
       "isbn": "9789793780016",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
       "vendor": "foyles"
@@ -48,7 +48,6 @@
         "CH"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -59,6 +58,7 @@
         }
       },
       "isbn": "9789793780016",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
       "vendor": "foyles"
@@ -69,7 +69,6 @@
         "CA"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -80,6 +79,7 @@
         }
       },
       "isbn": "9789793780016",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
       "vendor": "foyles"
@@ -317,7 +317,6 @@
         "ZW"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
@@ -328,6 +327,7 @@
         }
       },
       "isbn": "9789793780016",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/education/social-science-and-power-in-indonesia,hadiz-vedi-r-dhakidae-daniel-9789793780016",
       "vendor": "foyles"

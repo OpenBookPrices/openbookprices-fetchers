@@ -14,7 +14,6 @@
         "GB"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -25,6 +24,7 @@
         }
       },
       "isbn": "9781419704406",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "vendor": "foyles"
@@ -48,7 +48,6 @@
         "CH"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -59,6 +58,7 @@
         }
       },
       "isbn": "9781419704406",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "vendor": "foyles"
@@ -69,7 +69,6 @@
         "CA"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -80,6 +79,7 @@
         }
       },
       "isbn": "9781419704406",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "vendor": "foyles"
@@ -317,7 +317,6 @@
         "ZW"
       ],
       "currency": "GBP",
-      "timestamp": 1000000000,
       "formats": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
@@ -328,6 +327,7 @@
         }
       },
       "isbn": "9781419704406",
+      "timestamp": 1000000000,
       "ttl": 86400,
       "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406",
       "vendor": "foyles"
