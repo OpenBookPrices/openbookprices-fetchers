@@ -1,0 +1,21 @@
+{
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9780307353238"
+  },
+  "entries": [
+    {
+      "countries": [
+        "GB"
+      ],
+      "currency": "GBP",
+      "formats": {},
+      "isbn": "9780307353238",
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.co.uk/s?field-keywords=9780307353238",
+      "vendor": "amazon_uk"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9780307353139"
+  },
+  "entries": [
+    {
+      "countries": [
+        "GB"
+      ],
+      "currency": "GBP",
+      "formats": {},
+      "isbn": "9780307353139",
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.co.uk/dp/0307353133",
+      "vendor": "amazon_uk"
+    }
+  ]
+}

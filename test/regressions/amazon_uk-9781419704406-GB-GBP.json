@@ -1,0 +1,29 @@
+{
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9781419704406"
+  },
+  "entries": [
+    {
+      "countries": [
+        "GB"
+      ],
+      "currency": "GBP",
+      "formats": {
+        "new": {
+          "availabilityNote": "Usually dispatched within 24 hours",
+          "price": 26.5,
+          "shipping": 0,
+          "shippingNote": "Delivered FREE in the UK with Super Saver Delivery",
+          "total": 26.5
+        }
+      },
+      "isbn": "9781419704406",
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.co.uk/dp/1419704400",
+      "vendor": "amazon_uk"
+    }
+  ]
+}

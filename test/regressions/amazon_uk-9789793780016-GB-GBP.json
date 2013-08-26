@@ -1,0 +1,29 @@
+{
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9789793780016"
+  },
+  "entries": [
+    {
+      "countries": [
+        "GB"
+      ],
+      "currency": "GBP",
+      "formats": {
+        "new": {
+          "availabilityNote": "Usually dispatched within 1 to 3 weeks",
+          "price": 12.95,
+          "shipping": 0,
+          "shippingNote": "Delivered FREE in the UK with Super Saver Delivery",
+          "total": 12.95
+        }
+      },
+      "isbn": "9789793780016",
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.co.uk/dp/9793780010",
+      "vendor": "amazon_uk"
+    }
+  ]
+}

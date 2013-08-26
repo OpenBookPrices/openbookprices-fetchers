@@ -7,7 +7,8 @@ var Fetcher = function () {
 };
 
 var scrapers = {
-  foyles: require("./src/foyles"),
+  "amazon_uk":     require("./src/amazon_uk"),
+  "foyles":        require("./src/foyles"),
 };
 
 
