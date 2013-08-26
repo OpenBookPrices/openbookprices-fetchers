@@ -47,18 +47,18 @@ describe('Regression tests', function () {
 
     var vendorTests = testsByVendor[vendor].sort();
 
-    // Check that the vendor is enabled in config
-    if (config[vendor] && config[vendor].disabled) {
-      describe.skip(vendor, function () {});
-    } else {
-      describe(vendor, function () {
-        var Scraper = fetcher.getScraper(vendor);
-
-        _.each(vendorTests, function (test) {
-
-          var scraper = new Scraper({ isbn: test.isbn, country: test.country, currency: test.currency });
-
+    describe(vendor, function () {
+      var Scraper = fetcher.getScraper(vendor);
+    
+      _.each(vendorTests, function (test) {
+    
+        // Check that the vendor is enabled in config
+        if (config[vendor] && config[vendor].disabled) {
+          it.skip(test.basename, function () {});
+        } else {
           it(test.basename, function (done) {
+
+            var scraper = new Scraper({ isbn: test.isbn, country: test.country, currency: test.currency });
 
             var content  = fs.readFileSync(test.expectedFile).toString();
             var expected =
@@ -88,8 +88,8 @@ describe('Regression tests', function () {
               done();
             });
           });
-        });
+        }
       });
-    }
+    });
   });
 });
