@@ -30,9 +30,9 @@ if (!program.currency) {
 }
 
 console.log(
-  "Fetching price etc for '%s' from '%s' (%s, %s)",
-  program.isbn,
+  "Fetching price etc for '%s-%s-%s-%s'",
   program.vendor,
+  program.isbn,
   program.country,
   program.currency
 );
