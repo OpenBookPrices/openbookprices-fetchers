@@ -13,17 +13,28 @@ program
 
 program.parse(process.argv);
 
+
+
 // check that we have all required args
-if (!program.isbn || !program.vendor || !program.country || !program.currency) {
-  console.error('Usage: l2b-price-fetch --isbn .... --vendor .... --country GB --currency GBP');
+if (!program.isbn || !program.vendor) {
+  console.error('Usage: l2b-price-fetch --isbn .... --vendor .... [--country GB] [--currency GBP]');
   process.exit(1);
 }
 
+// If we don't have country or country use scraper's primary ones
+if (!program.country) {
+  program.country = fetcher.countryForVendor(program.vendor);
+}
+if (!program.currency) {
+  program.currency = fetcher.currencyForVendor(program.vendor);
+}
 
 console.log(
-  "Fetching price etc for '%s' from '%s'",
+  "Fetching price etc for '%s' from '%s' (%s, %s)",
   program.isbn,
-  program.vendor
+  program.vendor,
+  program.country,
+  program.currency
 );
 
 fetcher.fetch(
@@ -36,5 +47,6 @@ fetcher.fetch(
   function (err, data) {
     if (err) {throw err};
     console.log(canonicalJSON(data, null, 2));
+    process.exit();
   }
 );
