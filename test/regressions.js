@@ -5,7 +5,8 @@ var _             = require('underscore'),
     fs            = require('fs'),
     path          = require('path'),
     fetcher       = require('../'),
-    canonicalJSON = require('canonical-json');
+    canonicalJSON = require('canonical-json'),
+    config        = require('config');
 
 
 function getTests() {
@@ -46,45 +47,49 @@ describe('Regression tests', function () {
 
     var vendorTests = testsByVendor[vendor].sort();
 
-    describe(vendor, function () {
+    // Check that the vendor is enabled in config
+    if (config[vendor] && config[vendor].disabled) {
+      describe.skip(vendor, function () {});
+    } else {
+      describe(vendor, function () {
+        var Scraper = fetcher.getScraper(vendor);
 
-      var Scraper = fetcher.getScraper(vendor);
+        _.each(vendorTests, function (test) {
 
-      _.each(vendorTests, function (test) {
+          var scraper = new Scraper({ isbn: test.isbn, country: test.country, currency: test.currency });
 
-        var scraper = new Scraper({ isbn: test.isbn, country: test.country, currency: test.currency });
+          it(test.basename, function (done) {
 
-        it(test.basename, function (done) {
+            var content  = fs.readFileSync(test.expectedFile).toString();
+            var expected =
+              /^\{/.test(content) ?
+              JSON.parse(content) :
+              null;
 
-          var content  = fs.readFileSync(test.expectedFile).toString();
-          var expected =
-            /^\{/.test(content) ?
-            JSON.parse(content) :
-            null;
+            scraper.scrape(function (err, actual) {
+              assert.ifError(err);
 
-          scraper.scrape(function (err, actual) {
-            assert.ifError(err);
+              // change all the actual times to be relative to a fixed start time.
+              _.each(actual.entries, function (entry) {
+                // reset using 1_000_000_000 as base
+                entry.timestamp = 1000000000;
+              });
 
-            // change all the actual times to be relative to a fixed start time.
-            _.each(actual.entries, function (entry) {
-              // reset using 1_000_000_000 as base
-              entry.timestamp = 1000000000;
+              if (!expected || overwrite) {
+                fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
+              }
+
+              if (!expected) {
+                assert.ok(null, 'Had no data to compare to - now written to file. Run tests again.');
+              } else {
+                assert.deepEqual(actual, expected);
+              }
+
+              done();
             });
-
-            if (!expected || overwrite) {
-              fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
-            }
-
-            if (!expected) {
-              assert.ok(null, 'Had no data to compare to - now written to file. Run tests again.');
-            } else {
-              assert.deepEqual(actual, expected);
-            }
-
-            done();
           });
         });
       });
-    });
+    }
   });
 });
