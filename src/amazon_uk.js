@@ -29,14 +29,26 @@ Scraper.prototype.scrape = function (cb) {
   var self = this;
   var entries = this.results.entries = [];
 
-  // console.log("convert the isbn into ASIN");
-  self.isbn2asin(function (err, asin) {
-    if (err) { return cb(err); }
-    // console.log("asin: %s", asin);
+  opHelper.execute(
+    "ItemLookup",
+    {
+      ItemId: self.isbn,
+      IdType: "EAN",
+      SearchIndex: "Books",
+      Condition: "All",
+      ResponseGroup: "Offers",
+      MerchantId: "Amazon", // https://forums.aws.amazon.com/message.jspa?messageID=96815#
+    },
+    function (error, apaResults) {
+      if (error) {
+        return cb(error, null);
+      }
 
-    var url = asin ? "http://www.amazon.co.uk/dp/" + asin : "http://www.amazon.co.uk/s?field-keywords=" + self.isbn;
+      // console.log(JSON.stringify(apaResults, null, 2));
+      var asin   = self.extractASIN(apaResults);
+      var offers = self.extractOffers(apaResults);
 
-    self.getOffers(asin, function (err, offers) {
+      var url = asin ? "http://www.amazon.co.uk/dp/" + asin : "http://www.amazon.co.uk/s?field-keywords=" + self.isbn;
 
       var basePrice = {
         currency:  "GBP",
@@ -54,107 +66,71 @@ Scraper.prototype.scrape = function (cb) {
       }));
 
       self.cleanup(self.results);
+
       cb(null, self.results);
-    });
-  });
-};
-
-
-Scraper.prototype.isbn2asin = function (cb) {
-  var isbn = this.isbn;
-  // console.log("isbn: %s", isbn);
-
-  opHelper.execute(
-    "ItemLookup",
-    {
-      // https://affiliate-program.amazon.com/gp/associates/help/t5/a16
-      SearchIndex: "All",
-      ItemId: isbn,
-      IdType: "EAN",
-    },
-    function (error, results) {
-      if (error) {
-        return cb(error, null);
-      }
-
-      var items = results.ItemLookupResponse.Items[0].Item;
-      if (!items) {
-        return cb(null, null);
-      }
-
-      var asin = items[0].ASIN[0];
-      return cb(null, asin);
     }
   );
-
 };
 
 
-Scraper.prototype.getOffers = function (asin, cb) {
+Scraper.prototype.checkHaveResults = function (apaResults) {
 
-  if (!asin) {
-    return cb(null, []);
+  if (apaResults.ItemLookupResponse.Items[0].Item) {
+    return true;
   }
 
-  opHelper.execute(
-    "ItemLookup",
-    {
-      // https://affiliate-program.amazon.com/gp/associates/help/t5/a16
-      ItemId: asin,
-      Condition: "All",
-      ResponseGroup: "Offers",
-      // ResponseGroup: "OfferSummary",
-      MerchantId: "Amazon", // https://forums.aws.amazon.com/message.jspa?messageID=96815#
-      // MerchantId: "A3P5ROKL5A1OLE", // https://forums.aws.amazon.com/message.jspa?messageID=96815#
-    },
-    function (error, results) {
-      if (error) {
-        return cb(error, null);
-      }
+  return false;
+  
+};
 
-      // console.log(JSON.stringify(results, null, 2));
-      // console.log(results.ItemLookupResponse.Items[0].Item[0].OfferSummary);
 
-      // _.each(['New','Used'], function (key) {
-      //   console.log(key, results.ItemLookupResponse.Items[0].Item[0].OfferSummary[0]["Lowest" + key + "Price"]);
-      // });
+Scraper.prototype.extractOffers = function (apaResults) {
 
-      if (! results.ItemLookupResponse.Items) {
-        return cb(null, []);
-      }
+  if (! this.checkHaveResults(apaResults)) {
+    return [];
+  }
 
-      var items = results.ItemLookupResponse.Items[0].Item[0];
-      var offers = items.Offers[0].Offer;
-      // console.log(offers);
+  var item   = apaResults.ItemLookupResponse.Items[0].Item[0];
+  var offers = item.Offers[0].Offer;
 
-      var entries = [];
 
-      _.each(offers, function (offer) {
+  var entries = [];
 
-        var entry = {};
+  _.each(offers, function (offer) {
 
-        entry.condition = offer.OfferAttributes[0].Condition[0].toLowerCase();
+    var entry = {};
 
-        var listing = offer.OfferListing[0];
-        entry.price    = listing.Price[0].Amount[0] / 100;
-        entry.availabilityNote = listing.Availability[0];
+    entry.condition = offer.OfferAttributes[0].Condition[0].toLowerCase();
 
-        // console.log(listing);
-        var isSuperSaver = !! parseInt(listing.IsEligibleForSuperSaverShipping[0], 10);
-        if (isSuperSaver) {
-          entry.shipping = 0;
-          entry.shippingNote = "Delivered FREE in the UK with Super Saver Delivery";
-        } else {
-          entry.shipping = 0.59 + 2.16; // http://www.amazon.co.uk/gp/help/customer/display.html?nodeId=10790441#first
-          entry.shippingNote = "First Class delivery";
-        }
+    var listing = offer.OfferListing[0];
+    entry.price    = listing.Price[0].Amount[0] / 100;
+    entry.availabilityNote = listing.Availability[0];
 
-        // console.log(entry);
-        entries.push(entry);
-
-      });
-
-      return cb(null, entries);
+    // console.log(listing);
+    var isSuperSaver = !! parseInt(listing.IsEligibleForSuperSaverShipping[0], 10);
+    if (isSuperSaver) {
+      entry.shipping = 0;
+      entry.shippingNote = "Delivered FREE in the UK with Super Saver Delivery";
+    } else {
+      entry.shipping = 0.59 + 2.16; // http://www.amazon.co.uk/gp/help/customer/display.html?nodeId=10790441#first
+      entry.shippingNote = "First Class delivery";
     }
-  );
+
+    // console.log(entry);
+    entries.push(entry);
+  });
+
+  return entries;
+};
+
+
+Scraper.prototype.extractASIN = function (apaResults) {
+
+  if (! this.checkHaveResults(apaResults)) {
+    return null;
+  }
+
+  var item   = apaResults.ItemLookupResponse.Items[0].Item[0];
+  var asin   = item.ASIN[0];
+  return asin;
 };
