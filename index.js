@@ -29,16 +29,28 @@ Fetcher.vendorsForCountry = function (country) {
   return countryToVendors[country] || [];
 };
 
-Fetcher.currencyForVendor = function (scraperName, optionalCurrency) {
-  if (!optionalCurrency) {
-    optionalCurrency = "";
-  }
-  
+
+Fetcher.countryForVendor = function (scraperName) {
+
   var Scraper = scrapers[scraperName];
   if (!Scraper) {
     throw new Error("scraper '" + scraperName + "' not found");
   }
-    
+
+  return Scraper.prototype.countries[0];
+};
+
+
+Fetcher.currencyForVendor = function (scraperName, optionalCurrency) {
+  if (!optionalCurrency) {
+    optionalCurrency = "";
+  }
+
+  var Scraper = scrapers[scraperName];
+  if (!Scraper) {
+    throw new Error("scraper '" + scraperName + "' not found");
+  }
+
   var currencies = Scraper.prototype.currencies;
 
   if (_.contains(currencies, optionalCurrency)) {
@@ -46,7 +58,7 @@ Fetcher.currencyForVendor = function (scraperName, optionalCurrency) {
   } else {
     return currencies[0];
   }
-  
+
 };
 
 

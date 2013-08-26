@@ -36,7 +36,7 @@ var Scraper = module.exports = function (options) {
 Scraper.prototype = new WebScraper();
 
 Scraper.prototype.vendorCode = 'foyles';
-Scraper.prototype.countries  = regions.all;
+Scraper.prototype.countries  = _.chain(['GB', regions.all]).flatten().uniq().value();
 Scraper.prototype.currencies = ['GBP'];
 
 
