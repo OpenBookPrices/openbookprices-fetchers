@@ -3,7 +3,8 @@
 var GeneralScraper     = require("./general-scraper"),
     _                  = require("underscore"),
     OperationHelper    = require("apac").OperationHelper,
-    config             = require("config");
+    config             = require("config"),
+    shipping           = require("./amazon_uk_shipping");
 
 var Scraper = module.exports = function (options) {
   this.init(options);
@@ -12,7 +13,7 @@ var Scraper = module.exports = function (options) {
 Scraper.prototype = new GeneralScraper();
 
 Scraper.prototype.vendorCode = "amazon_uk";
-Scraper.prototype.countries  = ["GB"];
+Scraper.prototype.countries  = shipping.countries;
 Scraper.prototype.currencies = ["GBP"];
 Scraper.prototype.defaultTTL = 3600;
 
@@ -54,16 +55,32 @@ Scraper.prototype.scrape = function (cb) {
         currency:  "GBP",
       };
 
-      var formats = {};
-      _.each(offers, function (offer) {
-        formats[offer.condition] = _.omit(offer, "condition");
+
+      _.each(shipping.blocks, function (block) {
+
+        var formats = {};
+        _.each(offers, function (offer) {
+
+          var format = _.omit(offer, "condition", "isSuperSaver");
+
+          if (offer.isSuperSaver && block.superSaverPermitted) {
+            format.shipping = 0;
+            format.shippingNote = "Delivered FREE in the UK with Super Saver Delivery";
+          } else {
+            format.shippingNote = block.note;
+            format.shipping     = block.amount;
+          }
+
+          formats[offer.condition] = format;
+        });
+
+        entries.push(_.extend({}, basePrice, {
+          countries: block.countries,
+          url: url,
+          formats: formats,
+        }));
       });
 
-      entries.push(_.extend({}, basePrice, {
-        countries: ["GB"],
-        url: url,
-        formats: formats,
-      }));
 
       self.cleanup(self.results);
 
@@ -80,7 +97,7 @@ Scraper.prototype.checkHaveResults = function (apaResults) {
   }
 
   return false;
-  
+
 };
 
 
@@ -107,14 +124,7 @@ Scraper.prototype.extractOffers = function (apaResults) {
     entry.availabilityNote = listing.Availability[0];
 
     // console.log(listing);
-    var isSuperSaver = !! parseInt(listing.IsEligibleForSuperSaverShipping[0], 10);
-    if (isSuperSaver) {
-      entry.shipping = 0;
-      entry.shippingNote = "Delivered FREE in the UK with Super Saver Delivery";
-    } else {
-      entry.shipping = 0.59 + 2.16; // http://www.amazon.co.uk/gp/help/customer/display.html?nodeId=10790441#first
-      entry.shippingNote = "First Class delivery";
-    }
+    entry.isSuperSaver = !! parseInt(listing.IsEligibleForSuperSaverShipping[0], 10);
 
     // console.log(entry);
     entries.push(entry);
