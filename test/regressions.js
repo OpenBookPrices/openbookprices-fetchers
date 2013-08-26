@@ -71,12 +71,12 @@ describe('Regression tests', function () {
               entry.timestamp = 1000000000;
             });
 
-            if (! expected || overwrite) {
+            if (!expected || overwrite) {
               fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
             }
 
             if (!expected) {
-              assert.ok(expected, 'Had no data to compare to - now written to file. Run tests again.');
+              assert.ok(null, 'Had no data to compare to - now written to file. Run tests again.');
             } else {
               assert.deepEqual(actual, expected);
             }
