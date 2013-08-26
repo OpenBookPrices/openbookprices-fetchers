@@ -50,6 +50,11 @@ var shippingZones = {
   },
 };
 
+// tot up the item and delivery into total
+_.chain(shippingZones).values().each(function (entry) {
+  entry.total = entry.delivery + entry.item;
+});
+
 
 var shippingNotes = {
   "first": "First Class delivery",
@@ -65,16 +70,17 @@ var shippingNotes = {
 var shippingBlocks = [
 
   {
-    note: "first",
-    zone: "UK",
+    note: shippingNotes.first,
+    amount: shippingZones.UK.total,
+    superSaverPermitted: true,
     countries: [
       "GB", // UK
     ],
   },
 
   {
-    note: "2to3",
-    zone: "Europe1",
+    note: shippingNotes["2to3"],
+    amount: shippingZones.Europe1.total,
     countries: [
       "BE", // Belgium
       "DE", // Germany
@@ -84,16 +90,16 @@ var shippingBlocks = [
   },
 
   {
-    note: "3to4",
-    zone: "Europe1",
+    note: shippingNotes["3to4"],
+    amount: shippingZones.Europe1.total,
     countries: [
       "DK", // Denmark
     ],
   },
 
   {
-    note: "3to5",
-    zone: "Europe1",
+    note: shippingNotes["3to5"],
+    amount: shippingZones.Europe1.total,
     countries: [
       "AT", // Austria
       "CH", // Switzerland
@@ -104,8 +110,8 @@ var shippingBlocks = [
   },
 
   {
-    note: "3to5",
-    zone: "Europe2",
+    note: shippingNotes["3to5"],
+    amount: shippingZones.Europe2.total,
     countries: [
       "AD", // Andorra
       "ES", // Spain
@@ -124,8 +130,8 @@ var shippingBlocks = [
   },
 
   {
-    note: "5to7",
-    zone: "NorthAmerica",
+    note: shippingNotes["5to7"],
+    amount: shippingZones.NorthAmerica.total,
     countries: [
       "CA", // Canada
       "US", // United States
@@ -133,16 +139,16 @@ var shippingBlocks = [
   },
 
   {
-    note: "5to7",
-    zone: "Japan",
+    note: shippingNotes["5to7"],
+    amount: shippingZones.Japan.total,
     countries: [
       "JA", // Japan
     ],
   },
 
   {
-    note: "7to10",
-    zone: "Europe3",
+    note: shippingNotes["7to10"],
+    amount: shippingZones.Europe3.total,
     countries: [
       "BA", // Bosnia Herzegovina
       "BG", // Bulgaria
@@ -169,8 +175,8 @@ var shippingBlocks = [
   },
 
   {
-    note: "7to10",
-    zone: "RestOfWorld",
+    note: shippingNotes["7to10"],
+    amount: shippingZones.RestOfWorld.total,
     countries: [
       "AU", // Australia
       "BH", // Bahrain
@@ -209,48 +215,29 @@ var shippingBlocks = [
 ];
 
 
+// get a list of all the countries we've seen
+var seenCountries = _
+  .chain(shippingBlocks)
+  .pluck("countries")
+  .flatten()
+  .value();
 
+// create a list of all the countries that have not been seen yet
+var allCountries = _
+  .chain(countries.all)
+  .pluck("alpha2")
+  .value();
+var restOfWorldCountries =
+  _.difference(allCountries, seenCountries);
 
-// store all shipping details in here
-var shippingCountryLookup = {};
-
-// for each country store the shipping details
-_.each(shippingBlocks, function (block) {
-
-  var note = shippingNotes[block.note];
-  var zone = shippingZones[block.zone];
-  var amount = zone.delivery + zone.item;
-
-  _.each(block.countries, function (country) {
-    shippingCountryLookup[country] = {
-      shippingNote: note,
-      shipping: amount,
-    };
-  });
+shippingBlocks.push({
+  note: shippingNotes["7to12"],
+  amount: shippingZones.RestOfWorld.total,
+  countries: restOfWorldCountries,
 });
 
-
-
-// for remaining countries use the defaults
-// for each country store the shipping details
-var restOfWorldNote = shippingNotes["7to12"];
-var restOfWorldZone = shippingZones.RestOfWorld;
-var restOfWorldAmount = restOfWorldZone.delivery + restOfWorldZone.item;
-
-_.each(countries.all, function (country) {
-
-  var code = country.alpha2;
-
-  // check we've not already been added to the array
-  if (!shippingCountryLookup[code]) {
-    shippingCountryLookup[code] = {
-      shippingNote: restOfWorldNote,
-      shipping: restOfWorldAmount,
-    };
-  }
-
-});
-
-
-module.exports = shippingCountryLookup;
+module.exports = {
+  blocks: shippingBlocks,
+  countries: allCountries,
+};
 
