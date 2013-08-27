@@ -5,8 +5,7 @@ var _             = require('underscore'),
     fs            = require('fs'),
     path          = require('path'),
     fetcher       = require('../'),
-    canonicalJSON = require('canonical-json'),
-    config        = require('config');
+    canonicalJSON = require('canonical-json');
 
 
 function getTests() {
@@ -53,9 +52,7 @@ describe('Regression tests', function () {
       _.each(vendorTests, function (test) {
     
         // Check that the vendor is enabled in config
-        if (config[vendor] && config[vendor].disabled) {
-          it.skip(test.basename, function () {});
-        } else {
+        if (Scraper) {
           it(test.basename, function (done) {
 
             var scraper = new Scraper({ isbn: test.isbn, country: test.country, currency: test.currency });
@@ -88,6 +85,8 @@ describe('Regression tests', function () {
               done();
             });
           });
+        } else {
+          it.skip(test.basename, function () {});
         }
       });
     });

@@ -1,15 +1,29 @@
 "use strict";
 
-var _ = require("underscore");
+var _            = require("underscore"),
+    config       = require("config");
 
 var Fetcher = function () {
 
 };
 
-var scrapers = {
-  "amazon_uk":     require("./src/amazon_uk"),
-  "foyles":        require("./src/foyles"),
-};
+var knownScrapers = [
+  "amazon_uk",
+  "foyles",
+];
+
+var scrapers = {};
+
+_.each(knownScrapers, function (code) {
+  var scraper = require("./src/" + code);
+  if (config[code] && config[code].disabled) {
+    // scraper disabled, don't add to the list
+    // console.log("Not loading disabled scraper '%s'", code);
+  } else {
+    scrapers[code] = scraper;
+  }
+});
+
 
 
 var countryToVendors = {};
