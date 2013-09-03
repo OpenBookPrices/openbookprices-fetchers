@@ -45,4 +45,20 @@ describe("Fetcher", function () {
     });
   });
 
+  describe("vendor details", function () {
+    it("should return for known vendor", function () {
+      var details = fetcher.vendorDetails("foyles");
+      assert.deepEqual(details, {
+        code: "foyles",
+        name: "Foyles",
+        homepage: "http://www.foyles.co.uk/",
+      });
+    });
+
+    it("should return null for unknown vendor", function () {
+      var details = fetcher.vendorDetails("not_a_known_scraper");
+      assert.equal(details, null);
+    });
+  });
+
 });

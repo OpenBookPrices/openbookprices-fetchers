@@ -36,6 +36,9 @@ var Scraper = module.exports = function (options) {
 Scraper.prototype = new WebScraper();
 
 Scraper.prototype.vendorCode = 'foyles';
+Scraper.prototype.name       = 'Foyles';
+Scraper.prototype.homepage   = 'http://www.foyles.co.uk/';
+
 Scraper.prototype.countries  = _.chain(['GB', regions.all]).flatten().uniq().value();
 Scraper.prototype.currencies = ['GBP'];
 
@@ -84,7 +87,7 @@ Scraper.prototype.jqueryExtract = function ($) {
         price:            parseFloat(row.find('.OnlinePrice').text().replace(/[\D\.]/, '')) || null,
         availabilityNote: row.find('.Availtext').text().trim(),
       };
-      
+
       var basePrice = {
         currency:  'GBP',
       };

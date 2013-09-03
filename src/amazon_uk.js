@@ -21,6 +21,9 @@ var Scraper = module.exports = function (options) {
 Scraper.prototype = new GeneralScraper();
 
 Scraper.prototype.vendorCode = "amazon_uk";
+Scraper.prototype.name       = "Amazon UK";
+Scraper.prototype.homepage   = "http://www.amazon.co.uk/";
+
 Scraper.prototype.countries  = shipping.countries;
 Scraper.prototype.currencies = ["GBP"];
 Scraper.prototype.defaultTTL = 3600;

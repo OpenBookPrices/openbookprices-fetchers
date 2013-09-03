@@ -76,6 +76,19 @@ Fetcher.currencyForVendor = function (scraperName, optionalCurrency) {
 
 };
 
+Fetcher.vendorDetails = function (vendorCode) {
+  var scraper = this.getScraper(vendorCode);
+  if (!scraper) {
+    return null;
+  }
+
+  return {
+    code: vendorCode,
+    name: scraper.prototype.name,
+    homepage: scraper.prototype.homepage,
+  };
+};
+
 
 Fetcher.allVendorCodes = function () {
   return _.keys(scrapers);
