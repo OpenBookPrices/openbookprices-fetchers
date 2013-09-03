@@ -10,7 +10,7 @@ var uriTemplateParser   = require('uri-template'),
 var jquerySource  = fs.readFileSync(__dirname + '/../lib/jquery.js').toString();
 
 var scraper = function () {
-  
+
 };
 
 scraper.prototype = new GeneralScraper();
@@ -33,9 +33,9 @@ scraper.prototype.get = function (url, cb) {
       if (error) {
         return cb(error);
       }
-      
+
       results.url = response.request.uri.href;
-      
+
       jsdom.env({
         html: body,
         src: [ jquerySource ],
@@ -57,10 +57,12 @@ scraper.prototype.scrape = function (cb) {
   this.get(
     url,
     function (errors, window) {
+
+
       if (errors) {
-        throw errors;
+        return cb(errors);
       }
-      
+
       var $ = window.$;
       _.extend(results, self.jqueryExtract($));
 
@@ -75,7 +77,7 @@ scraper.prototype.scrape = function (cb) {
 
     }
   );
-  
+
 };
 
 
