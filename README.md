@@ -1,6 +1,6 @@
-# LinkToBooks Price Fetchers
+# OpenBookPrices Price Fetchers
 
-[![Build Status](https://secure.travis-ci.org/LinkToBooks/l2b-price-fetchers.png)](http://travis-ci.org/LinkToBooks/l2b-price-fetchers)
+[![Build Status](https://secure.travis-ci.org/OpenBookPrices/l2b-price-fetchers.png)](http://travis-ci.org/OpenBookPrices/l2b-price-fetchers)
 
 This repository contains the code that is used to fetch the price and other
 information for a particular book from a particular vendor.
@@ -77,7 +77,7 @@ to be had for buying more (as in the above example).
 The `url` is to the page on the vendor's site for this book.
 
 Note that the format is similar to, but different from, the format returned by
-the [LinkToBooks API](https://github.com/LinkToBooks/l2b-api).
+the [OpenBookPrices API](https://github.com/OpenBookPrices/openbookprices-api).
 
 ## Proxy
 
