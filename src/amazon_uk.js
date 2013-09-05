@@ -57,8 +57,8 @@ Scraper.prototype.scrape = function (cb) {
       }
 
       // console.log(JSON.stringify(apaResults, null, 2));
-      var asin   = self.extractASIN(apaResults);
-      var offers = self.extractOffers(apaResults);
+      var asin    = self.extractASIN(apaResults);
+      var results = self.extractOffers(apaResults);
 
       var url = asin ? "http://www.amazon.co.uk/dp/" + asin : "http://www.amazon.co.uk/s?field-keywords=" + self.isbn;
 
@@ -69,12 +69,12 @@ Scraper.prototype.scrape = function (cb) {
 
       _.each(shipping.blocks, function (block) {
 
-        var formats = {};
-        _.each(offers, function (offer) {
+        var offers = {};
+        _.each(results, function (result) {
 
-          var format = _.omit(offer, "condition", "isSuperSaver");
+          var format = _.omit(result, "condition", "isSuperSaver");
 
-          if (offer.isSuperSaver && block.superSaverPermitted) {
+          if (result.isSuperSaver && block.superSaverPermitted) {
             format.shipping = 0;
             format.shippingNote = "Delivered FREE in the UK with Super Saver Delivery";
           } else {
@@ -82,13 +82,13 @@ Scraper.prototype.scrape = function (cb) {
             format.shipping     = block.amount;
           }
 
-          formats[offer.condition] = format;
+          offers[result.condition] = format;
         });
 
         entries.push(_.extend({}, basePrice, {
           countries: block.countries,
           url: url,
-          formats: formats,
+          offers: offers,
         }));
       });
 

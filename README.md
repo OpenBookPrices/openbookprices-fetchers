@@ -34,7 +34,7 @@ The response is a hash, looking something like this:
         "GB"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Despatched in 1 business day.",
           "price": 5.83,

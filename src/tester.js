@@ -29,7 +29,7 @@ Scraper.prototype.jqueryExtract = function ($) {
     function (author) { return $(author).text().trim(); }
   );
 
-  var formats = results.formats = [];
+  var offers = results.offers = [];
 
   $('div.PurchaseTable')
     .find('tr.DarkGrey')
@@ -56,7 +56,7 @@ Scraper.prototype.jqueryExtract = function ($) {
         price.shipping = 0;
       }
 
-      formats.push(price);
+      offers.push(price);
     });
 
   return results;

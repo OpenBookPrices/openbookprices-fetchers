@@ -69,24 +69,24 @@ scraper.prototype.cleanup = function (results) {
     _.defaults(entry, {
       ttl:    self.defaultTTL || defaultTTL,
       url:    results.url,
-      formats: {},
+      offers: {},
       timestamp: Math.floor(Date.now() / 1000),
     });
 
 
     // If the price is null then delete entire entry
     _.each(
-      _.keys(entry.formats),
+      _.keys(entry.offers),
       function (format) {
-        if (_.isNull(entry.formats[format].price)) {
-          delete entry.formats[format];
+        if (_.isNull(entry.offers[format].price)) {
+          delete entry.offers[format];
         }
       }
     );
 
-    // Default all the formats for the various conditions
+    // Default all the offers for the various conditions
     _.each(
-      _.values(entry.formats),
+      _.values(entry.offers),
       function (price) {
         _.defaults(price, {
           price: null,

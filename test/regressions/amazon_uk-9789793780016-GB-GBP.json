@@ -10,7 +10,7 @@
         "GB"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -33,7 +33,7 @@
         "NL"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -53,7 +53,7 @@
         "DK"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -77,7 +77,7 @@
         "MC"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -109,7 +109,7 @@
         "VA"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -130,7 +130,7 @@
         "US"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -150,7 +150,7 @@
         "JA"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -190,7 +190,7 @@
         "TR"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -240,7 +240,7 @@
         "VE"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,
@@ -428,7 +428,7 @@
         "ZW"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 1 to 3 weeks",
           "price": 12.95,

@@ -14,7 +14,7 @@
         "GB"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
           "price": 12.95,
@@ -48,7 +48,7 @@
         "CH"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
           "price": 12.95,
@@ -69,7 +69,7 @@
         "CA"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
           "price": 12.95,
@@ -317,7 +317,7 @@
         "ZW"
       ],
       "currency": "GBP",
-      "formats": {
+      "offers": {
         "new": {
           "availabilityNote": "Printed to order. Despatched in 1 week.",
           "price": 12.95,

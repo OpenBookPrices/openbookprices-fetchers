@@ -57,7 +57,7 @@ Scraper.prototype.jqueryExtract = function ($) {
 
     var notFoundEntry = {
       countries: regions.all,
-      formats: {},
+      offers: {},
     };
 
     _.each(this.currencies, function (currency) {
@@ -95,7 +95,7 @@ Scraper.prototype.jqueryExtract = function ($) {
       // UK
       results.entries.push(_.extend({}, basePrice, {
         countries: regions.uk,
-        formats: {
+        offers: {
           new: _.extend({
             shipping: baseFormat.price < 10 ? 2.5 : 0,
             shippingNote: 'Free second class delivery in the UK for orders over £10',
@@ -106,7 +106,7 @@ Scraper.prototype.jqueryExtract = function ($) {
       // Europe
       results.entries.push(_.extend({}, basePrice, {
         countries: regions.europe,
-        formats: {
+        offers: {
           new: _.extend({
             shipping: 5,
             shippingNote: 'Air mail from UK: 4 - 14 days',
@@ -117,7 +117,7 @@ Scraper.prototype.jqueryExtract = function ($) {
       // N. America
       results.entries.push(_.extend({}, basePrice, {
         countries: regions.northAmerica,
-        formats: {
+        offers: {
           new: _.extend({
             shipping: 7,
             shippingNote: 'Air mail from UK: 4 - 14 days',
@@ -128,7 +128,7 @@ Scraper.prototype.jqueryExtract = function ($) {
       // N. America
       results.entries.push(_.extend({}, basePrice, {
         countries: regions.restOfWorld,
-        formats: {
+        offers: {
           new: _.extend({
             shipping: 8,
             shippingNote: 'Air mail from UK: 7 - 21 days',
