@@ -1,5 +1,5 @@
 {
-  "name": "l2b-price-fetchers",
+  "name": "openbookprices-fetchers",
   "version": "0.0.0",
   "description": "Code for getting the prices of books from various vendors",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/OpenBookPrices/l2b-price-fetchers.git"
+    "url": "git://github.com/OpenBookPrices/openbookprices-fetchers.git"
   },
   "author": "",
   "license": "AGPLv3",

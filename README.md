@@ -1,6 +1,6 @@
 # OpenBookPrices Price Fetchers
 
-[![Build Status](https://secure.travis-ci.org/OpenBookPrices/l2b-price-fetchers.png)](http://travis-ci.org/OpenBookPrices/l2b-price-fetchers)
+[![Build Status](https://secure.travis-ci.org/OpenBookPrices/openbookprices-fetchers.png)](http://travis-ci.org/OpenBookPrices/openbookprices-fetchers)
 
 This repository contains the code that is used to fetch the price and other
 information for a particular book from a particular vendor.
