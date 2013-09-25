@@ -10,6 +10,7 @@
         "GB"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -19,7 +20,6 @@
           "total": 26.5
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -33,6 +33,7 @@
         "NL"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -42,7 +43,6 @@
           "total": 31.98
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -53,6 +53,7 @@
         "DK"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -62,7 +63,6 @@
           "total": 31.98
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -77,6 +77,7 @@
         "MC"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -86,7 +87,6 @@
           "total": 31.98
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -109,6 +109,7 @@
         "VA"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -118,7 +119,6 @@
           "total": 32.480000000000004
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -130,6 +130,7 @@
         "US"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -139,7 +140,6 @@
           "total": 33.480000000000004
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -150,6 +150,7 @@
         "JA"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -159,7 +160,6 @@
           "total": 34.480000000000004
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -190,6 +190,7 @@
         "TR"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -199,7 +200,6 @@
           "total": 35.68
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -240,6 +240,7 @@
         "VE"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -249,7 +250,6 @@
           "total": 34.980000000000004
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
@@ -428,6 +428,7 @@
         "ZW"
       ],
       "currency": "GBP",
+      "isbn": "9781419704406",
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
@@ -437,7 +438,6 @@
           "total": 34.980000000000004
         }
       },
-      "isbn": "9781419704406",
       "timestamp": 1000000000,
       "ttl": 3600,
       "url": "http://www.amazon.co.uk/dp/1419704400",
