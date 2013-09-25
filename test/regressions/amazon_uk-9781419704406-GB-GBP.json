@@ -14,10 +14,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 0,
           "shippingNote": "Delivered FREE in the UK with Super Saver Delivery",
-          "total": 26.5
+          "total": 27.9
         }
       },
       "timestamp": 1000000000,
@@ -37,10 +37,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 5.48,
           "shippingNote": "2 to 3 business days",
-          "total": 31.98
+          "total": 33.379999999999995
         }
       },
       "timestamp": 1000000000,
@@ -57,10 +57,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 5.48,
           "shippingNote": "3 to 4 business days",
-          "total": 31.98
+          "total": 33.379999999999995
         }
       },
       "timestamp": 1000000000,
@@ -81,10 +81,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 5.48,
           "shippingNote": "3 to 5 business days",
-          "total": 31.98
+          "total": 33.379999999999995
         }
       },
       "timestamp": 1000000000,
@@ -113,10 +113,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 5.98,
           "shippingNote": "3 to 5 business days",
-          "total": 32.480000000000004
+          "total": 33.879999999999995
         }
       },
       "timestamp": 1000000000,
@@ -134,10 +134,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 6.98,
           "shippingNote": "5 to 7 business days",
-          "total": 33.480000000000004
+          "total": 34.879999999999995
         }
       },
       "timestamp": 1000000000,
@@ -154,10 +154,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 7.98,
           "shippingNote": "5 to 7 business days",
-          "total": 34.480000000000004
+          "total": 35.879999999999995
         }
       },
       "timestamp": 1000000000,
@@ -194,10 +194,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 9.18,
           "shippingNote": "7 to 10 business days",
-          "total": 35.68
+          "total": 37.08
         }
       },
       "timestamp": 1000000000,
@@ -244,10 +244,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 8.48,
           "shippingNote": "7 to 10 business days",
-          "total": 34.980000000000004
+          "total": 36.379999999999995
         }
       },
       "timestamp": 1000000000,
@@ -432,10 +432,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually dispatched within 24 hours",
-          "price": 26.5,
+          "price": 27.9,
           "shipping": 8.48,
           "shippingNote": "7 to 12 business days",
-          "total": 34.980000000000004
+          "total": 36.379999999999995
         }
       },
       "timestamp": 1000000000,
