@@ -1,0 +1,427 @@
+{
+  "args": {
+    "country": "US",
+    "currency": "USD",
+    "isbn": "9789793780016"
+  },
+  "entries": [
+    {
+      "countries": [
+        "US"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 0,
+          "shippingNote": "FREE Super Saver Shipping",
+          "total": 19.95
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "CA"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 9.48,
+          "shippingNote": "7 to 12 business days",
+          "total": 29.43
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "IL"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 10.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 30.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AU"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 10.48,
+          "shippingNote": "18 to 32 business days",
+          "total": 30.43
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "JP"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 5.48,
+          "shippingNote": "18 to 32 business days",
+          "total": 25.43
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AG",
+        "AI",
+        "BB",
+        "BM",
+        "BS",
+        "DM",
+        "DO",
+        "GD",
+        "JM",
+        "KN",
+        "KY",
+        "LC",
+        "MS",
+        "TC",
+        "TT",
+        "VC",
+        "VG"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 13.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 33.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AR",
+        "BO",
+        "BR",
+        "CL",
+        "CO",
+        "CR",
+        "CU",
+        "EC",
+        "GT",
+        "HN",
+        "HT",
+        "MX",
+        "NI",
+        "PA",
+        "PE",
+        "PR",
+        "PY",
+        "SV",
+        "UY",
+        "VE"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 9.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 29.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AD",
+        "AL",
+        "AM",
+        "AT",
+        "AZ",
+        "BA",
+        "BE",
+        "BG",
+        "BY",
+        "CH",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FO",
+        "FR",
+        "GB",
+        "GE",
+        "GG",
+        "GI",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IM",
+        "IS",
+        "IT",
+        "JE",
+        "KZ",
+        "LI",
+        "LT",
+        "LU",
+        "LV",
+        "MC",
+        "MD",
+        "ME",
+        "MK",
+        "MT",
+        "NL",
+        "NO",
+        "PL",
+        "PT",
+        "RO",
+        "RS",
+        "RU",
+        "SE",
+        "SI",
+        "SJ",
+        "SK",
+        "SM",
+        "TR",
+        "UA",
+        "VA"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 7.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 27.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AE",
+        "BH",
+        "EG",
+        "IQ",
+        "IR",
+        "JO",
+        "KW",
+        "LB",
+        "OM",
+        "PS",
+        "QA",
+        "SA",
+        "SY",
+        "YE"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 13.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 33.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AF",
+        "BD",
+        "BN",
+        "BT",
+        "BV",
+        "CN",
+        "FJ",
+        "FM",
+        "ID",
+        "IN",
+        "KG",
+        "KH",
+        "KI",
+        "KP",
+        "KR",
+        "LA",
+        "LK",
+        "MH",
+        "MM",
+        "MN",
+        "MY",
+        "NP",
+        "PH",
+        "PK",
+        "PW",
+        "SB",
+        "SG",
+        "TH",
+        "TJ",
+        "TL",
+        "TM",
+        "TO",
+        "TV",
+        "TW",
+        "UZ",
+        "VN",
+        "VU",
+        "WS"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 9.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 29.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    },
+    {
+      "countries": [
+        "AO",
+        "BF",
+        "BI",
+        "BJ",
+        "BW",
+        "CD",
+        "CF",
+        "CG",
+        "CI",
+        "CM",
+        "CV",
+        "DJ",
+        "DZ",
+        "EA",
+        "EH",
+        "ER",
+        "ET",
+        "GA",
+        "GH",
+        "GM",
+        "GN",
+        "GQ",
+        "GW",
+        "IC",
+        "KE",
+        "KM",
+        "LR",
+        "LS",
+        "LY",
+        "MA",
+        "MG",
+        "ML",
+        "MR",
+        "MU",
+        "MW",
+        "MZ",
+        "NA",
+        "NE",
+        "NG",
+        "RE",
+        "RW",
+        "SC",
+        "SD",
+        "SH",
+        "SL",
+        "SN",
+        "SO",
+        "SS",
+        "ST",
+        "SZ",
+        "TD",
+        "TG",
+        "TN",
+        "TZ",
+        "UG",
+        "YT",
+        "ZA",
+        "ZM",
+        "ZW"
+      ],
+      "currency": "USD",
+      "isbn": "9789793780016",
+      "offers": {
+        "new": {
+          "availabilityNote": "Usually ships in 24 hours",
+          "price": 19.95,
+          "shipping": 13.98,
+          "shippingNote": "18 to 32 business days",
+          "total": 33.93
+        }
+      },
+      "timestamp": 1000000000,
+      "ttl": 3600,
+      "url": "http://www.amazon.com/dp/9793780010",
+      "vendor": "amazon_us"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ var Fetcher = function () {
 
 var knownScrapers = [
   "amazon_uk",
+  "amazon_us",
   "foyles",
 ];
 
