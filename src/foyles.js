@@ -44,7 +44,7 @@ Scraper.prototype.currencies = ['GBP'];
 
 
 
-Scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/Public/Shop/Search.aspx?sortBy=1&searchType=3&advance=true&isbn={isbn}';
+Scraper.prototype.isbnURLTemplate = 'http://www.foyles.co.uk/all?term={isbn}';
 
 
 Scraper.prototype.jqueryExtract = function ($) {
