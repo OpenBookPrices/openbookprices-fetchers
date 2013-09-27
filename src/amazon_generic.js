@@ -6,8 +6,6 @@ var GeneralScraper     = require("./general-scraper"),
     config             = require("config");
 
 config.setModuleDefaults("amazon", {
-  // disabled by default as scraper requires auth tokens
-  disabled:  true,
   awsId:     null,
   awsSecret: null,
   assocId:   null,

@@ -1,7 +1,12 @@
 "use strict";
 
 var AmazonScraper     = require("./amazon_generic"),
-    shipping          = require("./amazon_uk_shipping");
+    shipping          = require("./amazon_uk_shipping"),
+    config            = require("config");
+
+config.setModuleDefaults("amazon_uk", {
+  enabled: false,
+});
 
 
 var Scraper = module.exports = function (options) {

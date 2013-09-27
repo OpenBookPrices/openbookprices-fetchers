@@ -17,11 +17,11 @@ var scrapers = {};
 
 _.each(knownScrapers, function (code) {
   var scraper = require("./src/" + code);
-  if (config[code] && config[code].disabled) {
-    // scraper disabled, don't add to the list
-    // console.log("Not loading disabled scraper '%s'", code);
-  } else {
+  if (config[code] && config[code].enabled) {
     scrapers[code] = scraper;
+  } else {
+    // scraper not enabled, don't add to the list
+    // console.log("Not loading scraper '%s' as it is not enabled", code);
   }
 });
 

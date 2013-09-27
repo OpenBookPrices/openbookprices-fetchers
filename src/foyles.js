@@ -2,7 +2,12 @@
 
 var WebScraper = require('./web-scraper'),
     countries  = require('country-data').countries,
-    _          = require('underscore');
+    _          = require('underscore'),
+    config     = require('config');
+
+config.setModuleDefaults('foyles', {
+  enabled: true,
+});
 
 
 // note that we can get the worldwide shipping prices from
