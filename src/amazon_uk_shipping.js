@@ -225,6 +225,7 @@ var seenCountries = _
 // create a list of all the countries that have not been seen yet
 var allCountries = _
   .chain(countries.all)
+  .where({status: "assigned"})
   .pluck("alpha2")
   .value();
 var restOfWorldCountries =
