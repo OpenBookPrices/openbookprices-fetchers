@@ -8,7 +8,7 @@ var WebScraper = require('./web-scraper'),
 // note that we can get the worldwide shipping prices from
 // http://www.foyles.co.uk/help-delivery
 var regions = {
-  all: _.pluck(countries.all, 'alpha2'),
+  all: _.chain(countries.all).where({status: 'assigned'}).pluck('alpha2').value(),
 
   uk: ['GB'],
 
