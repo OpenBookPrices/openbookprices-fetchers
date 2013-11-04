@@ -23,7 +23,7 @@
     "jshint": "~0.9.1",
     "canonical-json": "0.0.1",
     "uri-template": "~0.3.4",
-    "country-data": "0.0.9",
+    "country-data": "~0.0.9",
     "apac": "git+https://github.com/OpenBookPrices/node-apac.git#bug-fixes",
     "config": "~0.4.29"
   }
