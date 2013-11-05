@@ -90,6 +90,45 @@ Scraper.prototype.scrape = function (cb) {
 };
 
 
+Scraper.prototype.scrapeDetails = function (cb) {
+  var self = this;
+
+  var opHelper = new OperationHelper({
+    awsId:     config.amazon.awsId,
+    awsSecret: config.amazon.awsSecret,
+    assocId:   config.amazon.assocId,
+    endPoint:  self.amazonEndpoint,
+  });
+
+  opHelper.execute(
+    "ItemLookup",
+    {
+      ItemId: self.isbn,
+      IdType: "EAN",
+      SearchIndex: "Books",
+      ResponseGroup: "ItemAttributes",
+    },
+    function (error, apaResults) {
+      if (error) {
+        return cb(error, null);
+      }
+
+      // console.log(JSON.stringify(apaResults, null, 2));
+
+      var response = apaResults.ItemLookupResponse.Items[0].Item[0].ItemAttributes[0];
+      // console.log(JSON.stringify(response, null, 2));
+
+      var results = {
+        authors: response.Author   || [],
+        title:   response.Title[0] || "",
+      };
+
+      cb(null, results);
+    }
+  );
+};
+
+
 Scraper.prototype.checkHaveResults = function (apaResults) {
 
   if (apaResults.ItemLookupResponse.Items[0].Item) {

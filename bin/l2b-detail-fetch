@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var program = require("commander"),
+    fetcher = require("../"),
+    canonicalJSON = require('canonical-json');
+
+program
+  .version("0.0.1")
+  .option("-i, --isbn <isbn>",     "  Book's ISBN")
+
+program.parse(process.argv);
+
+
+
+// check that we have all required args
+if (!program.isbn) {
+  console.error('Usage: l2b-detail-fetch --isbn ....');
+  process.exit(1);
+}
+
+console.log("Fetching price etc for '%s'", program.isbn);
+
+fetcher.getDetails(
+  program.isbn,
+  function (err, data) {
+    if (err) {throw err};
+    console.log(canonicalJSON(data, null, 2));
+    process.exit();
+  }
+);

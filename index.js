@@ -114,4 +114,20 @@ Fetcher.fetch = function (options, cb) {
 };
 
 
+Fetcher.getDetails = function (isbn, cb) {
+
+  var options = {
+    vendor: "amazon_uk",
+    isbn: isbn,
+    country: "GB",   // to keep constructor happy
+    currency: "GBP", // to keep constructor happy
+  };
+
+  var Scraper = scrapers[options.vendor];
+
+  // Run the scraper
+  new Scraper(options).scrapeDetails(cb);
+};
+
+
 module.exports = Fetcher;
