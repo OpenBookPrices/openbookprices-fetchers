@@ -1,6 +1,6 @@
 {
   "name": "openbookprices-fetchers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Code for getting the prices of books from various vendors",
   "main": "index.js",
   "scripts": {
