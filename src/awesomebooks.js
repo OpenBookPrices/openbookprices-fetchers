@@ -169,7 +169,6 @@ Scraper.prototype.jqueryExtract = function ($) {
     var offers = {};
     offers[condition] = {
       availabilityNote: availabilityNote,
-      currency: 'GBP',
       price: price,
       shipping: regionData.shipping,
       shippingNote: regionData.shippingNote,
@@ -178,6 +177,7 @@ Scraper.prototype.jqueryExtract = function ($) {
 
     results.entries.push({
       countries: regionData.countries,
+      currency: 'GBP',
       offers: offers,
     });
   });

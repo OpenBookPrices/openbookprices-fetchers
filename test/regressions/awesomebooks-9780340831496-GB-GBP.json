@@ -9,11 +9,11 @@
       "countries": [
         "GB"
       ],
+      "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
         "new": {
           "availabilityNote": "5 in stock",
-          "currency": "GBP",
           "price": 24.63,
           "shipping": 0,
           "shippingNote": "2-5 Days",
@@ -51,11 +51,11 @@
         "SE",
         "CH"
       ],
+      "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
         "new": {
           "availabilityNote": "5 in stock",
-          "currency": "GBP",
           "price": 24.63,
           "shipping": 0.99,
           "shippingNote": "3-14 Days (FREE for 2+ items)",
@@ -73,11 +73,11 @@
         "US",
         "CA"
       ],
+      "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
         "new": {
           "availabilityNote": "5 in stock",
-          "currency": "GBP",
           "price": 24.63,
           "shipping": 0.99,
           "shippingNote": "5-15 Days (FREE for 2+ items)",
@@ -95,11 +95,11 @@
         "AU",
         "NZ"
       ],
+      "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
         "new": {
           "availabilityNote": "5 in stock",
-          "currency": "GBP",
           "price": 24.63,
           "shipping": 2.99,
           "shippingNote": "5-15 Days (FREE for 2+ items)",
@@ -159,11 +159,11 @@
         "VG",
         "VI"
       ],
+      "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
         "new": {
           "availabilityNote": "5 in stock",
-          "currency": "GBP",
           "price": 24.63,
           "shipping": 2.99,
           "shippingNote": "5-21 Days (flat fee for any size of order)",
