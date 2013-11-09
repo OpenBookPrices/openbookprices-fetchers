@@ -15,7 +15,6 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "commander": "~1.1.1",
-    "jsdom": "~0.3.4",
     "request": "~2.12.0",
     "underscore": "~1.4.4",
     "ean": "~0.0.2",
@@ -25,6 +24,7 @@
     "uri-template": "~0.3.4",
     "country-data": "~0.0.9",
     "apac": "git+https://github.com/OpenBookPrices/node-apac.git#bug-fixes",
-    "config": "~0.4.29"
+    "config": "~0.4.29",
+    "cheerio": "~0.12.3"
   }
 }
