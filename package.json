@@ -25,6 +25,7 @@
     "uri-template": "~0.3.4",
     "country-data": "~0.0.9",
     "apac": "git+https://github.com/OpenBookPrices/node-apac.git#bug-fixes",
-    "config": "~0.4.29"
+    "config": "~0.4.29",
+    "cheerio": "~0.12.3"
   }
 }
