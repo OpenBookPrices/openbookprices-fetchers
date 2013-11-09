@@ -72,13 +72,6 @@ Scraper.prototype.jqueryExtract = function ($) {
     return results;
   }
 
-  // FIXME - remove this
-  results.title  = $('div.BookTitle').find('span[itemprop=name]').text();
-  results.authors = _.map(
-    $('div.Author').first().find('a'),
-    function (author) { return $(author).text().trim(); }
-  );
-
   $('div.PurchaseTable')
     .find('tr.DarkGrey')
     .first()

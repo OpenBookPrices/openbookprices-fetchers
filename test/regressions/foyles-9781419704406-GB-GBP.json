@@ -4,10 +4,6 @@
     "currency": "GBP",
     "isbn": "9781419704406"
   },
-  "authors": [
-    "Anna Wintour",
-    "Conde Nast Publications Inc."
-  ],
   "entries": [
     {
       "countries": [
@@ -334,6 +330,5 @@
       "vendor": "foyles"
     }
   ],
-  "title": "Vogue: The Editor's Eye",
   "url": "http://www.foyles.co.uk/witem/vogue-the-editors-eye,anna-wintour-conde-nast-9781419704406"
 }
