@@ -1,0 +1,131 @@
+{
+  "args": {
+    "country": "GB",
+    "currency": "GBP",
+    "isbn": "9789793780016"
+  },
+  "entries": [
+    {
+      "countries": [
+        "GB"
+      ],
+      "isbn": "9789793780016",
+      "offers": {},
+      "timestamp": 1000000000,
+      "ttl": 86400,
+      "url": "http://www.awesomebooks.com/book/9789793780016/book",
+      "vendor": "awesomebooks"
+    },
+    {
+      "countries": [
+        "AT",
+        "BE",
+        "CY",
+        "CZ",
+        "DK",
+        "FI",
+        "FR",
+        "DE",
+        "GR",
+        "LU",
+        "MT",
+        "PL",
+        "IE",
+        "IT",
+        "NL",
+        "NO",
+        "PT",
+        "SM",
+        "SI",
+        "ES",
+        "SE",
+        "CH"
+      ],
+      "isbn": "9789793780016",
+      "offers": {},
+      "timestamp": 1000000000,
+      "ttl": 86400,
+      "url": "http://www.awesomebooks.com/book/9789793780016/book",
+      "vendor": "awesomebooks"
+    },
+    {
+      "countries": [
+        "US",
+        "CA"
+      ],
+      "isbn": "9789793780016",
+      "offers": {},
+      "timestamp": 1000000000,
+      "ttl": 86400,
+      "url": "http://www.awesomebooks.com/book/9789793780016/book",
+      "vendor": "awesomebooks"
+    },
+    {
+      "countries": [
+        "AU",
+        "NZ"
+      ],
+      "isbn": "9789793780016",
+      "offers": {},
+      "timestamp": 1000000000,
+      "ttl": 86400,
+      "url": "http://www.awesomebooks.com/book/9789793780016/book",
+      "vendor": "awesomebooks"
+    },
+    {
+      "countries": [
+        "AR",
+        "BH",
+        "BB",
+        "BM",
+        "BR",
+        "BG",
+        "CN",
+        "HR",
+        "EG",
+        "EE",
+        "FO",
+        "GI",
+        "GL",
+        "GG",
+        "HK",
+        "HU",
+        "IS",
+        "IN",
+        "IM",
+        "IL",
+        "JP",
+        "JE",
+        "KR",
+        "LV",
+        "LI",
+        "MK",
+        "MY",
+        "MU",
+        "MD",
+        "MC",
+        "AN",
+        "NC",
+        "PR",
+        "QA",
+        "RU",
+        "SG",
+        "SK",
+        "ZA",
+        "TW",
+        "TR",
+        "AE",
+        "VA",
+        "VG",
+        "VI"
+      ],
+      "isbn": "9789793780016",
+      "offers": {},
+      "timestamp": 1000000000,
+      "ttl": 86400,
+      "url": "http://www.awesomebooks.com/book/9789793780016/book",
+      "vendor": "awesomebooks"
+    }
+  ],
+  "url": "http://www.awesomebooks.com/book/9789793780016/book"
+}
