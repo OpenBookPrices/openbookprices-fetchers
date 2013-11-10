@@ -40,7 +40,7 @@ var testsByVendor = _.groupBy(
 );
 
 describe('Regression tests', function () {
-  this.timeout(20000); // long time - some sites are slow
+  this.timeout(30000); // loooong time - some sites are slow, and net can be too
 
   _.each(_.keys(testsByVendor).sort(), function (vendor) {
 
@@ -48,9 +48,9 @@ describe('Regression tests', function () {
 
     describe(vendor, function () {
       var Scraper = fetcher.getScraper(vendor);
-    
+
       _.each(vendorTests, function (test) {
-    
+
         // Check that the vendor is enabled in config
         if (Scraper) {
           it(test.basename, function (done) {

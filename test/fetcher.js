@@ -63,6 +63,7 @@ describe("Fetcher", function () {
 
 
   describe("book details", function () {
+    this.timeout(10000);
 
     // Only do these tests if amazon_uk scraper is available
     var vendor = "amazon_uk";
