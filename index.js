@@ -11,6 +11,7 @@ var knownScrapers = [
   "amazon_uk",
   "amazon_us",
   "awesomebooks",
+  "barnesandnoble",
   "foyles",
 ];
 
