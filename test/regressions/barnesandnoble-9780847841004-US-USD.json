@@ -14,10 +14,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually ships within 24 hours",
-          "price": 40.47,
+          "price": 39.46,
           "shipping": 0,
           "shippingNote": "Free shipping",
-          "total": 40.47
+          "total": 39.46
         }
       },
       "timestamp": 1000000000,
@@ -34,10 +34,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually ships within 24 hours",
-          "price": 40.47,
+          "price": 39.46,
           "shipping": 6.48,
           "shippingNote": "6-12 business days",
-          "total": 46.95
+          "total": 45.94
         }
       },
       "timestamp": 1000000000,
@@ -299,10 +299,10 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually ships within 24 hours",
-          "price": 40.47,
+          "price": 39.46,
           "shipping": 12.98,
           "shippingNote": "8-22 business days",
-          "total": 53.45
+          "total": 52.44
         }
       },
       "timestamp": 1000000000,
