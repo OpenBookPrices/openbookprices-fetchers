@@ -12,12 +12,12 @@
       "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
-        "new": {
-          "availabilityNote": "5 in stock",
-          "price": 25.88,
+        "used": {
+          "availabilityNote": "1 in stock",
+          "price": 18.28,
           "shipping": 0,
           "shippingNote": "2-5 Days",
-          "total": 25.88,
+          "total": 18.28,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
@@ -54,12 +54,12 @@
       "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
-        "new": {
-          "availabilityNote": "5 in stock",
-          "price": 25.88,
+        "used": {
+          "availabilityNote": "1 in stock",
+          "price": 18.28,
           "shipping": 0.99,
           "shippingNote": "3-14 Days (FREE for 2+ items)",
-          "total": 26.869999999999997,
+          "total": 19.27,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
@@ -76,12 +76,12 @@
       "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
-        "new": {
-          "availabilityNote": "5 in stock",
-          "price": 25.88,
+        "used": {
+          "availabilityNote": "1 in stock",
+          "price": 18.28,
           "shipping": 0.99,
           "shippingNote": "5-15 Days (FREE for 2+ items)",
-          "total": 26.869999999999997,
+          "total": 19.27,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
@@ -98,12 +98,12 @@
       "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
-        "new": {
-          "availabilityNote": "5 in stock",
-          "price": 25.88,
+        "used": {
+          "availabilityNote": "1 in stock",
+          "price": 18.28,
           "shipping": 2.99,
           "shippingNote": "5-15 Days (FREE for 2+ items)",
-          "total": 28.869999999999997,
+          "total": 21.270000000000003,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
@@ -162,12 +162,12 @@
       "currency": "GBP",
       "isbn": "9780340831496",
       "offers": {
-        "new": {
-          "availabilityNote": "5 in stock",
-          "price": 25.88,
+        "used": {
+          "availabilityNote": "1 in stock",
+          "price": 18.28,
           "shipping": 2.99,
           "shippingNote": "5-21 Days (flat fee for any size of order)",
-          "total": 28.869999999999997,
+          "total": 21.270000000000003,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
