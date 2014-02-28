@@ -57,9 +57,9 @@
         "used": {
           "availabilityNote": "1 in stock",
           "price": 18.28,
-          "shipping": 0.99,
-          "shippingNote": "3-14 Days (FREE for 2+ items)",
-          "total": 19.27,
+          "shipping": 2.99,
+          "shippingNote": "3-14 Days (flat fee for any size of order)",
+          "total": 21.270000000000003,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
@@ -79,9 +79,9 @@
         "used": {
           "availabilityNote": "1 in stock",
           "price": 18.28,
-          "shipping": 0.99,
-          "shippingNote": "5-15 Days (FREE for 2+ items)",
-          "total": 19.27,
+          "shipping": 2.99,
+          "shippingNote": "5-15 Days (flat fee for any size of order)",
+          "total": 21.270000000000003,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }
       },
@@ -102,7 +102,7 @@
           "availabilityNote": "1 in stock",
           "price": 18.28,
           "shipping": 2.99,
-          "shippingNote": "5-15 Days (FREE for 2+ items)",
+          "shippingNote": "5-15 Days (flat fee for any size of order)",
           "total": 21.270000000000003,
           "url": "http://www.awesomebooks.com/book/9780340831496/mcgee-on-food-and-cooking-an-encyclopedia-of-kitchen/"
         }

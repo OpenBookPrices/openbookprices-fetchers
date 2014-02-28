@@ -43,20 +43,20 @@ var regions = {
       'SE', // Sweden
       'CH', // Switzerland
     ],
-    shipping: 0.99,
-    shippingNote: '3-14 Days (FREE for 2+ items)',
+    shipping: 2.99,
+    shippingNote: '3-14 Days (flat fee for any size of order)',
   },
 
   northAmerica: {
     countries: ['US', 'CA'],
-    shipping: 0.99,
-    shippingNote: '5-15 Days (FREE for 2+ items)',
+    shipping: 2.99,
+    shippingNote: '5-15 Days (flat fee for any size of order)',
   },
 
   australiaNewZealand: {
     countries: ['AU', 'NZ'],
     shipping: 2.99,
-    shippingNote: '5-15 Days (FREE for 2+ items)',
+    shippingNote: '5-15 Days (flat fee for any size of order)',
   },
 
   restOfWorld: {
