@@ -9,6 +9,7 @@
       "countries": [
         "US"
       ],
+      "currency": "USD",
       "isbn": "9780307353139",
       "offers": {},
       "timestamp": 1000000000,
@@ -20,6 +21,7 @@
       "countries": [
         "CA"
       ],
+      "currency": "USD",
       "isbn": "9780307353139",
       "offers": {},
       "timestamp": 1000000000,
@@ -276,6 +278,7 @@
         "ZM",
         "ZW"
       ],
+      "currency": "USD",
       "isbn": "9780307353139",
       "offers": {},
       "timestamp": 1000000000,

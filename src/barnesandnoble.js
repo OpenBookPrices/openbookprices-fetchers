@@ -73,6 +73,7 @@ Scraper.prototype.jqueryExtract = function ($) {
     _.each(regions, function (regionData) {
       results.entries.push({
         countries: regionData.countries,
+        currency: 'USD',
         offers: {},
       });
     });
@@ -106,6 +107,7 @@ Scraper.prototype.jqueryExtract = function ($) {
       price: price,
       shipping: shipping,
       shippingNote: shippingNote,
+      currency: 'USD',
     };
 
     results.entries.push({
