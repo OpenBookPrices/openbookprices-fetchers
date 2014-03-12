@@ -73,13 +73,17 @@ scraper.prototype.cleanup = function (results) {
       timestamp: Math.floor(Date.now() / 1000),
     });
 
+    var checkNumber = function (number) {
+      return _.isNumber(number) && !_.isNaN(number);
+    };
 
     // If the price is null then delete entire entry
     _.each(
-      _.keys(entry.offers),
-      function (format) {
-        if (_.isNull(entry.offers[format].price)) {
-          delete entry.offers[format];
+      entry.offers,
+      function (offer, condition) {
+        // price must be a real number
+        if (!checkNumber(offer.price)) {
+          delete entry.offers[condition];
         }
       }
     );
@@ -87,20 +91,17 @@ scraper.prototype.cleanup = function (results) {
     // Default all the offers for the various conditions
     _.each(
       _.values(entry.offers),
-      function (price) {
-        _.defaults(price, {
-          price: null,
-          shipping: null,
-          total: null,
+      function (offer) {
+        _.defaults(offer, {
+          shipping: 0,
           shippingNote: null,
           availabilityNote: null,
         });
 
-        if (_.isNumber(price.price)) {
-          price.total = price.price;
-          if (_.isNumber(price.shipping)) {
-            price.total += price.shipping;
-          }
+        offer.total = offer.price;
+
+        if (checkNumber(offer.shipping)) {
+          offer.total += offer.shipping;
         }
 
       }

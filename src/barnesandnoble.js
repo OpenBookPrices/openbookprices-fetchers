@@ -68,6 +68,7 @@ Scraper.prototype.jqueryExtract = function ($) {
   // Not Found
   if (
     $('div.search-noresults-message').toArray().length ||  // no results found
+    // !buyBox.toArray().length || // perhaps redirect to nook book?
     buyBox.find('div.not-available').toArray().length // found, but not avail
   ) {
     _.each(regions, function (regionData) {
