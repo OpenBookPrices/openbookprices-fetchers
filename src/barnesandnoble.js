@@ -98,7 +98,7 @@ Scraper.prototype.jqueryExtract = function ($) {
         shipping = 0;
         shippingNote = 'Free shipping';
       } else {
-        shippingNote += ' (FREE shipping on orders over $' + regionData.freeShippingAppliesAt + ')';
+        shippingNote += ' (Free shipping on orders over ' + regionData.freeShippingAppliesAt + ' USD)';
       }
     }
 
