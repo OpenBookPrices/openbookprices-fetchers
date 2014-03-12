@@ -14,6 +14,7 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually ships within 24 hours",
+          "condition": "new",
           "currency": "USD",
           "price": 9.99,
           "shipping": 3.99,
@@ -36,6 +37,7 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually ships within 24 hours",
+          "condition": "new",
           "currency": "USD",
           "price": 9.99,
           "shipping": 6.48,
@@ -303,6 +305,7 @@
       "offers": {
         "new": {
           "availabilityNote": "Usually ships within 24 hours",
+          "condition": "new",
           "currency": "USD",
           "price": 9.99,
           "shipping": 12.98,

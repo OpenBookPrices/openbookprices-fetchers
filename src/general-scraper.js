@@ -91,7 +91,7 @@ scraper.prototype.cleanup = function (results) {
     // Default all the offers for the various conditions
     _.each(
       entry.offers,
-      function (offer) {
+      function (offer, condition) {
         _.defaults(offer, {
           shipping: 0,
           shippingNote: null,
@@ -99,6 +99,7 @@ scraper.prototype.cleanup = function (results) {
           url: entry.url,
         });
 
+        offer.condition = condition;
         offer.total = offer.price;
 
         if (checkNumber(offer.shipping)) {

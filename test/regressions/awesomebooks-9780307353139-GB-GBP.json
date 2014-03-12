@@ -14,6 +14,7 @@
       "offers": {
         "used": {
           "availabilityNote": "Temporarily out of stock",
+          "condition": "used",
           "price": 5.51,
           "shipping": 0,
           "shippingNote": "2-5 Days",
@@ -56,6 +57,7 @@
       "offers": {
         "used": {
           "availabilityNote": "Temporarily out of stock",
+          "condition": "used",
           "price": 5.51,
           "shipping": 2.99,
           "shippingNote": "3-14 Days (flat fee for any size of order)",
@@ -78,6 +80,7 @@
       "offers": {
         "used": {
           "availabilityNote": "Temporarily out of stock",
+          "condition": "used",
           "price": 5.51,
           "shipping": 2.99,
           "shippingNote": "5-15 Days (flat fee for any size of order)",
@@ -100,6 +103,7 @@
       "offers": {
         "used": {
           "availabilityNote": "Temporarily out of stock",
+          "condition": "used",
           "price": 5.51,
           "shipping": 2.99,
           "shippingNote": "5-15 Days (flat fee for any size of order)",
@@ -164,6 +168,7 @@
       "offers": {
         "used": {
           "availabilityNote": "Temporarily out of stock",
+          "condition": "used",
           "price": 5.51,
           "shipping": 2.99,
           "shippingNote": "5-21 Days (flat fee for any size of order)",

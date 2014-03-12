@@ -115,6 +115,7 @@ function testResultsAreValid(actual) {
       assert(_.isString(offer.shippingNote), 'offer.shippingNote missing or wrong type');
       assert(_.isString(offer.availabilityNote), 'offer.availabilityNote missing or wrong type');
       assert(_.isString(offer.url), 'offer.url missing or wrong type');
+      assert.equal(offer.condition, condition);
     });
 
   });
