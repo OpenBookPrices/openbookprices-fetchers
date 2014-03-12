@@ -63,12 +63,17 @@ Scraper.prototype.scrape = function (cb) {
 
           var format = _.omit(result, "condition", "isSuperSaver");
 
-          if (result.isSuperSaver && block.superSaverPermitted) {
+          var maySuperSaver = result.isSuperSaver && block.superSaverPermitted;
+
+          if (maySuperSaver && result.price >= block.superSaverMinimum) {
             format.shipping = 0;
             format.shippingNote = self.superSaverNote;
           } else {
-            format.shippingNote = block.note;
             format.shipping     = block.amount;
+            format.shippingNote = block.note;
+            if (maySuperSaver) {
+              format.shippingNote += " (Free shipping eligible on orders over " + block.superSaverMinimum + " " + basePrice.currency + ")";
+            }
           }
 
           offers[result.condition] = format;

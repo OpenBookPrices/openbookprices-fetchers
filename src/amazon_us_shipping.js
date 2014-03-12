@@ -103,6 +103,7 @@ var shippingBlocks = [
     note: shippingNotes.US,
     amount: shippingZones.US.total,
     superSaverPermitted: true,
+    superSaverMinimum: 35,
     countries: [ "US" ],
   },
   {

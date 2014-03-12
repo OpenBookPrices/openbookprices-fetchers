@@ -73,6 +73,7 @@ var shippingBlocks = [
     note: shippingNotes.first,
     amount: shippingZones.UK.total,
     superSaverPermitted: true,
+    superSaverMinimum: 10,
     countries: [
       "GB", // UK
     ],

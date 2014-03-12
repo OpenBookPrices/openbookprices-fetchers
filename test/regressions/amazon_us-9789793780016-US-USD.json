@@ -16,9 +16,9 @@
           "availabilityNote": "Usually ships in 24 hours",
           "condition": "new",
           "price": 19.95,
-          "shipping": 0,
-          "shippingNote": "FREE Super Saver Shipping",
-          "total": 19.95,
+          "shipping": 3.99,
+          "shippingNote": "3 to 5 business days (Free shipping eligible on orders over 35 USD)",
+          "total": 23.939999999999998,
           "url": "http://www.amazon.com/dp/9793780010"
         }
       },
