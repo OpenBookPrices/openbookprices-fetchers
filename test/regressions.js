@@ -73,7 +73,8 @@ describe('Regression tests', function () {
               });
 
               if (!expected || overwrite) {
-                fs.writeFileSync(test.expectedFile, canonicalJSON(actual, null, 2));
+                var json = canonicalJSON(actual, null, 2);
+                fs.writeFileSync(test.expectedFile, json);
               }
 
               if (!expected) {
@@ -105,6 +106,17 @@ function testResultsAreValid(actual) {
     assert(_.isString(entry.vendor),   'entry.vendor missing or wrong type');
     assert(_.isString(entry.currency), 'entry.currency missing or wrong type');
     assert(_.isArray(entry.countries), 'entry.countries missing or wrong type');
+
+    _.each(entry.offers, function (offer, condition) {
+      // console.log(offer, condition);
+      assert(_.isNumber(offer.price), 'offer.price missing or wrong type');
+      assert(_.isNumber(offer.shipping), 'offer.shipping missing or wrong type');
+      assert(_.isNumber(offer.total), 'offer.total missing or wrong type');
+      assert(_.isString(offer.shippingNote), 'offer.shippingNote missing or wrong type');
+      assert(_.isString(offer.availabilityNote), 'offer.availabilityNote missing or wrong type');
+      assert(_.isString(offer.url), 'offer.url missing or wrong type');
+    });
+
   });
 
 }

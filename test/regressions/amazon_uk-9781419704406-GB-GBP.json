@@ -17,7 +17,8 @@
           "price": 27.9,
           "shipping": 0,
           "shippingNote": "Delivered FREE in the UK with Super Saver Delivery",
-          "total": 27.9
+          "total": 27.9,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -40,7 +41,8 @@
           "price": 27.9,
           "shipping": 5.48,
           "shippingNote": "2 to 3 business days",
-          "total": 33.379999999999995
+          "total": 33.379999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -60,7 +62,8 @@
           "price": 27.9,
           "shipping": 5.48,
           "shippingNote": "3 to 4 business days",
-          "total": 33.379999999999995
+          "total": 33.379999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -84,7 +87,8 @@
           "price": 27.9,
           "shipping": 5.48,
           "shippingNote": "3 to 5 business days",
-          "total": 33.379999999999995
+          "total": 33.379999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -116,7 +120,8 @@
           "price": 27.9,
           "shipping": 5.98,
           "shippingNote": "3 to 5 business days",
-          "total": 33.879999999999995
+          "total": 33.879999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -137,7 +142,8 @@
           "price": 27.9,
           "shipping": 6.98,
           "shippingNote": "5 to 7 business days",
-          "total": 34.879999999999995
+          "total": 34.879999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -157,7 +163,8 @@
           "price": 27.9,
           "shipping": 7.98,
           "shippingNote": "5 to 7 business days",
-          "total": 35.879999999999995
+          "total": 35.879999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -197,7 +204,8 @@
           "price": 27.9,
           "shipping": 9.18,
           "shippingNote": "7 to 10 business days",
-          "total": 37.08
+          "total": 37.08,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -247,7 +255,8 @@
           "price": 27.9,
           "shipping": 8.48,
           "shippingNote": "7 to 10 business days",
-          "total": 36.379999999999995
+          "total": 36.379999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,
@@ -436,7 +445,8 @@
           "price": 27.9,
           "shipping": 8.48,
           "shippingNote": "7 to 12 business days",
-          "total": 36.379999999999995
+          "total": 36.379999999999995,
+          "url": "http://www.amazon.co.uk/dp/1419704400"
         }
       },
       "timestamp": 1000000000,

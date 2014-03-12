@@ -90,12 +90,13 @@ scraper.prototype.cleanup = function (results) {
 
     // Default all the offers for the various conditions
     _.each(
-      _.values(entry.offers),
+      entry.offers,
       function (offer) {
         _.defaults(offer, {
           shipping: 0,
           shippingNote: null,
           availabilityNote: null,
+          url: entry.url,
         });
 
         offer.total = offer.price;

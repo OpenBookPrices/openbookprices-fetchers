@@ -18,7 +18,8 @@
           "price": 39.46,
           "shipping": 0,
           "shippingNote": "Free shipping",
-          "total": 39.46
+          "total": 39.46,
+          "url": "http://www.barnesandnoble.com/w/suzanne-kasler-suzanne-kasler/1114855068?ean=9780847841004&itm=1&usri=9780847841004"
         }
       },
       "timestamp": 1000000000,
@@ -39,7 +40,8 @@
           "price": 39.46,
           "shipping": 6.48,
           "shippingNote": "6-12 business days",
-          "total": 45.94
+          "total": 45.94,
+          "url": "http://www.barnesandnoble.com/w/suzanne-kasler-suzanne-kasler/1114855068?ean=9780847841004&itm=1&usri=9780847841004"
         }
       },
       "timestamp": 1000000000,
@@ -305,7 +307,8 @@
           "price": 39.46,
           "shipping": 12.98,
           "shippingNote": "8-22 business days",
-          "total": 52.44
+          "total": 52.44,
+          "url": "http://www.barnesandnoble.com/w/suzanne-kasler-suzanne-kasler/1114855068?ean=9780847841004&itm=1&usri=9780847841004"
         }
       },
       "timestamp": 1000000000,

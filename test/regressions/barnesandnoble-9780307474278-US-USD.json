@@ -18,7 +18,8 @@
           "price": 9.99,
           "shipping": 3.99,
           "shippingNote": "3-7 business days (FREE shipping on orders over $25)",
-          "total": 13.98
+          "total": 13.98,
+          "url": "http://www.barnesandnoble.com/w/da-vinci-code-dan-brown/1100022068?ean=9780307474278&itm=1&usri=9780307474278"
         }
       },
       "timestamp": 1000000000,
@@ -39,7 +40,8 @@
           "price": 9.99,
           "shipping": 6.48,
           "shippingNote": "6-12 business days",
-          "total": 16.47
+          "total": 16.47,
+          "url": "http://www.barnesandnoble.com/w/da-vinci-code-dan-brown/1100022068?ean=9780307474278&itm=1&usri=9780307474278"
         }
       },
       "timestamp": 1000000000,
@@ -305,7 +307,8 @@
           "price": 9.99,
           "shipping": 12.98,
           "shippingNote": "8-22 business days",
-          "total": 22.97
+          "total": 22.97,
+          "url": "http://www.barnesandnoble.com/w/da-vinci-code-dan-brown/1100022068?ean=9780307474278&itm=1&usri=9780307474278"
         }
       },
       "timestamp": 1000000000,
