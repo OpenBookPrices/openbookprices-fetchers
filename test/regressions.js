@@ -82,6 +82,8 @@ describe('Regression tests', function () {
                 assert.deepEqual(actual, expected);
               }
 
+              testResultsAreValid(actual);
+
               done();
             });
           });
@@ -92,3 +94,17 @@ describe('Regression tests', function () {
     });
   });
 });
+
+
+function testResultsAreValid(actual) {
+
+  // check that the entries are all complete
+  _.each(actual.entries, function (entry) {
+    // console.log(entry);
+    assert(_.isString(entry.isbn),     'entry.isbn missing or wrong type');
+    assert(_.isString(entry.vendor),   'entry.vendor missing or wrong type');
+    assert(_.isString(entry.currency), 'entry.currency missing or wrong type');
+    assert(_.isArray(entry.countries), 'entry.countries missing or wrong type');
+  });
+
+}

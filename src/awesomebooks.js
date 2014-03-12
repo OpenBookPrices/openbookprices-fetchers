@@ -142,6 +142,7 @@ Scraper.prototype.jqueryExtract = function ($) {
     _.each(regions, function (regionData) {
       results.entries.push({
         countries: regionData.countries,
+        currency: 'GBP',
         offers: {},
       });
     });
