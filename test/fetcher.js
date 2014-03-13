@@ -79,6 +79,11 @@ describe("Fetcher", function () {
             "title": "McGee on Food and Cooking: An Encyclopedia of Kitchen Science, History and Culture"
           },
         },
+        // This isbn not found on Amazon as it is a Nook eBook.
+        "9781781100295": {
+          error: null,
+          details: null,
+        }
       };
 
       _.each(detailTests, function (expected, isbn) {

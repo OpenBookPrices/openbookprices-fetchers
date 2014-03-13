@@ -120,7 +120,14 @@ Scraper.prototype.scrapeDetails = function (cb) {
 
       // console.log(JSON.stringify(apaResults, null, 2));
 
-      var response = apaResults.ItemLookupResponse.Items[0].Item[0].ItemAttributes[0];
+      var apaResultsItem = apaResults.ItemLookupResponse.Items[0].Item;
+
+      // Check that we have a result
+      if (!apaResultsItem) {
+        return cb(null, null);
+      }
+
+      var response = apaResultsItem[0].ItemAttributes[0];
       // console.log(JSON.stringify(response, null, 2));
 
       var results = {
