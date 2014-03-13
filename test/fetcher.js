@@ -70,18 +70,27 @@ describe("Fetcher", function () {
     var Scraper = fetcher.getScraper(vendor);
 
     if (Scraper) {
-      it("Check book details", function (done) {
-        fetcher.getDetails("9780340831496", function (err, details) {
-          assert.deepEqual(
-            details,
-            {
-              "authors": ["Harold Mcgee"],
-              "title": "McGee on Food and Cooking: An Encyclopedia of Kitchen Science, History and Culture"
-            }
-          );
-          done();
+
+      var detailTests = {
+        "9780340831496": {
+          error: null,
+          details: {
+            "authors": ["Harold Mcgee"],
+            "title": "McGee on Food and Cooking: An Encyclopedia of Kitchen Science, History and Culture"
+          },
+        },
+      };
+
+      _.each(detailTests, function (expected, isbn) {
+        it("Check book details for " + isbn, function (done) {
+          fetcher.getDetails(isbn, function (err, details) {
+            assert.deepEqual(err, expected.error);
+            assert.deepEqual(details, expected.details);
+            done();
+          });
         });
       });
+
     } else {
       it.skip("Skip book details as 'amazon_uk' scraper not available");
     }
