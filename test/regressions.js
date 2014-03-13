@@ -40,7 +40,7 @@ var testsByVendor = _.groupBy(
 );
 
 describe('Regression tests', function () {
-  this.timeout(30000); // loooong time - some sites are slow, and net can be too
+  this.timeout(60000); // loooong time - some sites are slow, and net can be too
 
   _.each(_.keys(testsByVendor).sort(), function (vendor) {
 
